@@ -162,4 +162,4 @@ For full license details, please see the [`LICENSE`](./LICENSE) file in the root
 
 ---
 
-*Crafted and compiled by **Stefan Tusk Beratung|Coaching|Training** — www.ren-ai-ssance.de*
+*Crafted and compiled by — www.ren-ai-ssance.de*
