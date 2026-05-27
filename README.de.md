@@ -12,9 +12,6 @@
 * **Praxiserprobt:** Seit über 12 Monaten im produktiven Einsatz bei Unternehmen und Gründungsberatern.
 * **Datensouverän:** Sensible Finanzdaten verlassen niemals Ihr System.
 
-### 🇬🇧 Overview (English)
-**Louis AI** is a professional financial planning, forecasting, and business simulation workspace designed for startups, SMEs, and financial advisors. Build rigorous multi-year financial forecasts, analyze cash flows, and evaluate investment paths – supercharged by an autonomous **Multi-Agent AI team** (ReAct loop), a local vector RAG engine, and secure Human-in-the-Loop validation.
-
 ---
 
 ## 🚀 Quick Start (Docker – Empfohlen)
