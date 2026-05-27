@@ -1,165 +1,173 @@
-# Louis AI — Intelligente Finanzplanung & Multi-Agenten-KI
+# LOUIS-AI v1.0.0 – The Local, Privacy-First AI Financial Planner for Businesses & Advisors
+
+---
+🇩🇪 **Suchen Sie die deutsche Dokumentation?** [Hier geht es zur deutschen Version (README.de.md)](./README.de.md)
+---
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D%2020.0.0-green.svg)](https://nodejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.x-purple.svg)](https://vite.dev/)
 [![React](https://img.shields.io/badge/React-18.x-blue.svg)](https://react.dev/)
 
-**Louis AI** is a professional financial planning, forecasting, and business simulation workspace designed for startups, small businesses, and financial advisors. It empowers users to build rigorous multi-year financial forecasts, analyze cash flows, evaluate investment paths, and perform deep business simulation. 
+---
 
-With **Louis AI**, financial modeling is supercharged by an autonomous **Multi-Agent AI team** following the ReAct loop, backed by a local vector-database RAG engine (Retrieval-Augmented Generation) and secure Human-in-the-Loop validation.
+### 🚀 Stop Excel Chaos & Cloud Data Leaks
+Build bank-grade, institution-ready financial plans (optimized for investors and strict European funding bodies like KfW, BAFA, AVGS) 100% locally on your own infrastructure. Formerly a premium B2B SaaS—now fully open-source under GPLv3.
+
+* **Battle-Tested:** In active production use by enterprises and startup consultants for over 12 months.
+* **Data Sovereign:** Sensitive financial data, balances, and corporate strategies never leave your network.
 
 ---
 
-## 🇩🇪 Zusammenfassung auf Deutsch
+## ⚡ Quick Start (Docker – Recommended)
 
-**Louis AI** ist ein hochintegriertes Finanzplanungs- und Simulationswerkzeug für Startups und kleine Unternehmen. Es automatisiert die Erstellung von Ertragsplänen, Liquiditätsplänen und Abschreibungsplänen über mehrere Jahre. Ein fortschrittlicher, mehrteiliger KI-Berater (Multi-Agenten-System mit Orchestrator, Architect und Critic) unterstützt Sie in Echtzeit bei Marktanalysen, SWOT-Auswertungen, Finanzrecherchen und dem automatisierten Ausfüllen von Finanzplanungs-Daten (durch menschlich abgenommene Diff-Echtzeitvorschläge).
-
----
-
-## 🚀 Core Features
-
-### 📊 Comprehensive Financial Planning & Derivations
-*   **Structured Inputs**: Guided interfaces for foundation metadata, granular pricing, sales volumes, OpEx, CapEx (Capitals/Assets), and financing (equity/debt schedules).
-*   **Ertragsplan (P&L Statements)**: Automatic real-time formulation and aggregation of monthly and yearly revenues, materials, personnel, operating costs, interest, and depreciation.
-*   **Liquiditätsplan (Cash Flow Statements)**: Live cash inflows and outflows calculations, computing monthly liquidity surpluses, dynamic minimum reserves, and funding bottlenecks.
-*   **Abschreibungsplan (Depreciation Table)**: Integrated with standard assets schedules (Afa-Tables) to compute linear depreciation values and book values over planning years.
-*   **Scenario Comparison (Szenariovergleich)**: Establish independent business plans (e.g., *Best Case vs. Worst Case*) and compare key metrics, ROI, ROS, and liquidity pools side-by-side using fully interactive visual charts.
-
-### 🤖 Advanced Agentic Multi-Agent AI System
-*   **The Orchestrator (Louis Visionary)**: Acts as the command center. Analyzes complex requests, parses user intent (`DATA_CHANGE`, `ANALYSIS`, `GENERAL`), maps step-by-step plans, and triggers appropriate tool loops.
-*   **The Architect / Execution Assistant**: Runs specialized tools iteratively (e.g., retrieving local RAG context, consulting external search engines, performing complex math calculations) in a ReAct model (up to 4 loops) before producing structured conclusions.
-*   **The Critic (Louis QA)**: Automatically intercepts data manipulation, audits generated arrays/values for physical/mathematical consistency, filters out hallucinated models, and flags security issues.
-*   **Visible Chain-of-Thought (CoT)**: Outlines the reasoning process, SWOT metrics, and strategic thinking directly in the UI in a transparent `<thought>` toggle block.
-
-### 🔐 Zero-Direct-Write Security Model
-To maintain absolute data integrity, the AI **cannot write directly** into your workspace databases. 
-Instead, it submits structured proposals which are analyzed, compared, and formatted in a **Visual JSON Diff Review Panel**. You inspect the proposed changes line-by-line and can accept or reject them with a single click.
-
-### 📚 RAG & Integrated Knowledge Base
-Upload documents (PDF, DocX, Excel sheets) into your project's personal context. Louis AI parses them locally using a fully secure inline transformer pipeline (`@xenova/transformers`, MiniLM) and handles vector distance search via a local `lancedb` instance, bringing your business plans and custom industry indexes alive.
-
----
-
-## 🛠 Tech Stack
-
-### Frontend (User Interface)
-*   **Vite + React (TypeScript)**: Ultrafast, reliable, and strictly typed SPA interface.
-*   **State Management**: `Zustand` for reliable, unified global actions and persistent histories.
-*   **Data Visualization**: `Recharts` and `D3` for professional reactive financial analytics.
-*   **Internationalization**: Full `react-i18next` localized translation setup supporting English & German.
-*   **Styling**: Modern, modular Tailwind CSS layout architecture.
-
-### Backend (Server Layer)
-*   **Express (Node.js)**: Proxies requests, protects API secrets, handles email SMTP setups, and directs SQLite database storage.
-*   **Databases**: 
-    *   **SQLite** (`better-sqlite3`) for robust, reliable local file persistence per project.
-    *   **LanceDB** + local mini-transformer pipeline for on-device vector storage.
-*   **AI Integration**: Out-of-the-box integration for:
-    *   **Google Gemini API**: Utilizing the modern, high-speed `@google/genai` TypeScript SDK.
-    *   **Ollama**: Secure, locally-run open LLMs (like `qwen2.5:14b` or `mistral`).
-    *   **OpenAI / Claude**: Third-party API support.
-*   **Integrated Search**: Connects securely to `SearXNG` instances for real-time market data retrieval.
-
----
-
-## 📦 Installation & Quick Start
-
-Please read [`INSTALL.md`](./INSTALL.md) for deeper details on different OS platforms. Here is the fast track:
-
-### Option A: Local Run (Node.js)
-
-#### 1. Requirements
-*   **Node.js**: Version 20+ (LTS recommended)
-*   **Build Tools**: Python and C++ compilers (such as GCC/Clang or MS Build tools) for compilations of native addons (`better-sqlite3`, `lancedb`).
-
-#### 2. Get the Source & Build
-```bash
-# Clone the repository
-git clone <your-repo-url>
-cd louis-ai
-
-# Install all npm dependencies
-npm install
-
-# Build static assets & server files
-npm run build
-```
-
-#### 3. Start Development Mode
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-### Option B: Docker Containers (Recommended for SearXNG Integration)
-
-Louis AI provides a reliable, multi-container Docker compose setup, packing SearXNG for sandboxed, private web searches out of the box.
+Get LOUIS-AI up and running in less than 2 minutes, including a sandboxed, private local web search engine (**SearXNG**) out of the box:
 
 ```bash
-# Build and spin containers in background
+# 1. Clone the repository and navigate into the folder
+git clone <https://github.com/ren-AI-ssanceDE/LOUIS-AI> && cd louis-ai
+
+# 2. Build and spin up the containers in the background
 docker-compose up -d --build
+
 ```
-The workspace will be running immediately at [http://localhost:3000](http://localhost:3000).
+
+Once deployed, open **http://localhost:3000** instantly in your browser.
 
 ---
 
-## ⚙ Config & Environment Variables
+## 📊 Core Features
 
-Create a `.env` file in the root folder based on [`.env.example`](./.env.example):
+### 1. Comprehensive Financial Modeling & Forecasting
 
-```env
-# The URL where this app is hosted (optional in cloud setups, useful for OAuth/callbacks)
-APP_URL="http://localhost:3000"
+* **Structured Workspace:** Guided entry flows for corporate metadata, granular pricing matrixes, sales volumes, OpEx, CapEx (asset schedules), and dynamic financing (equity & debt schedules).
+* **P&L Statements (Ertragsplan):** Automatic real-time formulation and aggregation of monthly and yearly revenues, materials, personnel cost, operating expenses, interest, and depreciation.
+* **Cash Flow Statements (Liquiditätsplan):** Live cash inflow/outflow calculations computing monthly liquidity surpluses, dynamic minimum reserves, and funding bottlenecks.
+* **Depreciation Tables (Abschreibungsplan):** Integrated with standardized asset schedules (e.g., German AfA-Tables) to automate linear depreciation values and net book values over multiple planning years.
+* **Scenario Comparison:** Establish independent business plans (*Best Case vs. Worst Case*) and evaluate key performance metrics, ROI, ROS, and cash runways side-by-side via interactive D3 charts.
 
-# Optional security token protecting API access
-PROJECT_TOKEN="your_secure_project_token"
+### 2. Advanced Multi-Agent Autonomous AI Team
 
-# Optional Google Gemini API Key (Can be supplied directly in the UI as well)
-# GEMINI_API_KEY="AIzaSy..."
-```
+* **The Orchestrator (Louis Visionary):** The command center. Parses complex user input, classifies intent (`DATA_CHANGE`, `ANALYSIS`, `GENERAL`), maps execution paths, and triggers agent tools.
+* **The Architect (Execution Assistant):** Runs specialized iterative loops using the ReAct model (up to 4 iterations). Consults local RAG data, fetches anonymized web data, and solves financial mathematical equations.
+* **The Critic (Louis QA):** Automatically intercepts data proposals, audits generated arrays for physical and mathematical consistency, filters hallucinations, and enforces core business logic.
+* **Visible Chain-of-Thought (CoT):** Strategic thinking, SWOT indicators, and financial reasoning are displayed transparently inside a collapsible UI `<thought>` toggle block.
 
-*(Note: API keys can also be fed dynamically details inside the application's Admin Settings Panel to prevent keeping credentials in raw files).*
+### 3. Zero-Direct-Write Security Model
+
+Absolute data integrity by design: The AI **cannot write directly** into your workspace database. Instead, it submits structured proposals analyzed and rendered in a **Visual JSON Diff Review Panel**. You inspect proposed financial changes line-by-line and accept or reject them with a single click (Human-in-the-Loop).
+
+### 4. Air-Gapped Local RAG Engine
+
+Upload internal enterprise data (PDF, DocX, Excel sheets) straight into your project context. Louis AI processes files completely offline via a secure local transformer pipeline (`@xenova/transformers`, MiniLM) and handles lightning-fast semantic searches using a local `lancedb` vector store.
 
 ---
 
 ## 🤖 Multi-Agent Workflow Diagram
 
 ```
-[User Query] ──> [Orchestrator] ──> Intents identified (DATA_CHANGE, ANALYSIS, etc.)
-                      │
-                      ▼
+[User Query] ──> [Orchestrator] ──> Identifies Intent (DATA_CHANGE, ANALYSIS, etc.)
+                          │
+                          ▼
                [ReAct Loop] (Up to 4 iterations)
-               ├── Chat Memory & Summary
-               ├── Web Search (SearXNG with retry checks)
-               ├── Knowledge Base RAG Search (LanceDB + Transformers)
-               └── Financial Math KPIs calculator
-                      │
-                      ▼
-             [Louis Architect] ──> Builds Thinking and Draft Response
-                      │
-                      ▼
-             [Louis QA Critic] ──> Checks schema constraints & financial soundness
-                      │
-                      ▼
-             [Diff Review UI] ──> Human approves changes ──> Saved to SQLite!
+               ├── Chat Memory & Context Summary
+               ├── Web Search (SearXNG with automated fallback checks)
+               ├── Knowledge Base RAG Search (LanceDB + Local Transformers)
+               └── Financial Math KPI Calculator
+                          │
+                          ▼
+             [Louis Architect] ──> Builds Thinking & Structured Data Draft
+                          │
+                          ▼
+             [Louis QA Critic] ──> Validates Schema & Financial Soundness
+                          │
+                          ▼
+             [Diff Review UI]  ──> Human Manual Approval ──> Persisted to SQLite DB!
+
 ```
 
 ---
 
-## 📄 License & Commercial Restrictions
+## 🛠 Tech Stack
 
-This software is licensed under the **GNU General Public License v3 (GPLv3)**.
+### Frontend (UI Layer)
 
-### Key Terms (GPLv3):
-*   **Free as in Freedom**: Anyone is allowed to run, inspect, share, copy, and modify Louis AI.
-*   **Must Share Source**: If you distribute modified versions of this software, or host modified versions of it as a paid online service (SaaS), you **MUST** publish your complete modified source code under the same GPLv3 Copyleft license. You cannot make closed-source commercial forks of this tool.
-*   **No Warranties**: Released in hope of usefulness, but without any warranties.
+* **Vite + React (TypeScript):** Ultrafast, strictly typed Single-Page Application interface.
+* **State Management:** `Zustand` for unified, high-performance global states and action histories.
+* **Data Visualization:** `Recharts` and `D3` for professional reactive financial analytics.
+* **Localization:** Fully localized with `react-i18next` (English & German pre-configured).
+* **Styling:** Modern, modular design engineered with Tailwind CSS.
 
-For full license details, please see the [`LICENSE`](./LICENSE) file in the root of this repository.
+### Backend (Server Layer)
+
+* **Express (Node.js):** Directs API requests, secures environmental secrets, manages SMTP configurations, and handles file-system SQLite routing.
+* **Databases:**
+* **SQLite** (`better-sqlite3`) for robust, file-based persistence per project.
+* **LanceDB** for embedded, serverless vector search.
+
+
+* **LLM Engine Compatibility:** Out-of-the-box native integrations for:
+* **Ollama:** Secure, locally-run open models (recommended: `qwen2.5:14b` or `mistral`).
+* **Google Gemini API:** Utilizing the high-speed `@google/genai` TypeScript SDK.
+* **OpenAI / Claude:** Global API endpoints supported.
+
+
 
 ---
 
-*Crafted and compiled by — www.ren-ai-ssance.de*
+## ⚙️ Alternative Manual Installation (Without Docker)
+
+For detailed operating system requirements, please see [`INSTALL.md`](https://www.google.com/search?q=./INSTALL.md).
+
+### Prerequisites
+
+* **Node.js:** Version 20+ (LTS recommended)
+* **Build Tools:** Python and C++ Compilers (GCC/Clang or MS Build Tools) to compile native addons (`better-sqlite3`, `lancedb`).
+
+```bash
+# 1. Install all dependencies
+npm install
+
+# 2. Build production assets
+npm run build
+
+# 3. Fire up development mode
+npm run dev
+
+```
+
+### Configuration (.env)
+
+Create a `.env` file in the root folder based on [`.env.example`](https://www.google.com/search?q=./.env.example):
+
+```env
+APP_URL="http://localhost:3000"
+PROJECT_TOKEN="your_secure_project_token"
+# GEMINI_API_KEY="AIzaSy..." # Optional, can also be supplied inside the UI admin panel
+
+```
+
+---
+
+## 📄 License & Open-Source Terms
+
+This software is licensed under the **GNU General Public License v3 (GPLv3)**.
+
+* **Free as in Freedom:** Anyone is permitted to run, audit, modify, and redistribute LOUIS-AI.
+* **Copyleft Obligations:** If you distribute modified versions of this software, or host modified versions of it as a paid online service (SaaS), you **MUST** publish your complete modified source code under the same GPLv3 license. Closed-source commercial forks are strictly prohibited.
+
+---
+
+## 💼 Enterprise Support & Customization
+
+**LOUIS-AI is and will always remain 100% free.** However, if you require professional deployment assistance, integration into legacy ERP/banking software, or custom feature branches tailored to your corporate workflow, the official core maintainer is available for hire:
+
+**ren-AI-ssance (Owner: Stefan Tusk)** *Pragmatic AI Solutions & Strategic Management Consulting.*
+
+* **Website:** [https://ren-ai-ssance.de](https://ren-ai-ssance.de)
+* **Email:** service@ren-ai-ssance.de
+* **Contact:** Stefan Tusk
+
+---
+
+*Built with passion for data-sovereign corporate financial intelligence – www.ren-ai-ssance.de*
