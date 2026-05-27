@@ -23,7 +23,7 @@ Bringen Sie LOUIS-AI inklusive lokaler, anonymisierter Websuche (**SearXNG**) in
 
 ```bash
 # 1. Repository klonen und in den Ordner wechseln
-git clone <your-repo-url> && cd louis-ai
+git clone <https://github.com/ren-AI-ssanceDE/LOUIS-AI> && cd louis-ai
 
 # 2. Container im Hintergrund bauen und starten
 docker-compose up -d --build
