@@ -1,0 +1,460 @@
+/**
+ * @license
+ * Copyright 2024 Stefan Tusk Beratung|Coaching|Training, www.ren-ai-ssance.de
+ * All Rights Reserved.
+ */
+
+@media print {
+    html, body {
+        overflow: visible !important;
+        height: auto !important;
+        width: auto !important;
+        position: static !important;
+        background-color: #fff !important;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        font-size: 10pt;
+        background-color: #fff !important;
+    }
+    
+    #louis-ai-app .modal-overlay {
+        display: none !important;
+    }
+
+    #louis-ai-app, 
+    #louis-ai-app.dark-theme,
+    .app-root-container {
+        display: block !important;
+        height: auto !important;
+        min-height: auto !important;
+        background-color: #fff !important;
+        color: #000 !important;
+        overflow: visible !important;
+        --text-color: #000 !important;
+        --background-color: #fff !important;
+        --content-bg: #fff !important;
+        --sidebar-bg: #fff !important;
+        --sidebar-text: #000 !important;
+        --border-color: #ccc !important;
+        --table-header-bg: #f7f7f7 !important;
+        --table-total-bg: #f7f7f7 !important;
+        --primary-color: #0052cc !important;
+    }
+    
+    #louis-ai-app,
+    #louis-ai-app.dark-theme,
+    .app-root-container {
+        /* Define variables for print to ensure visibility */
+        --primary-color: #0052cc;
+        --positive-color: #006644;
+        --danger-color: #de350b;
+        --secondary-color: #6b778c;
+        --chart-bar-color-1: #4C6EF5;
+        --chart-bar-color-2: #ACB5BD;
+        --chart-bar-color-3: #DEE2E6;
+        --chart-line-color-1: #4C6EF5;
+        --chart-line-color-2: #868E96;
+        --chart-line-color-3: #748FFC;
+        --chart-line-color-4: #CED4DA;
+        --chart-line-color-5: #364FC7;
+    }
+
+    /* Hide all non-printable UI components */
+    #louis-ai-app .main-layout,
+    #louis-ai-app .ai-assistant-container,
+    #louis-ai-app .modal-overlay,
+    #louis-ai-app .notification-toast,
+    #louis-ai-app .backup-reminder-banner,
+    #louis-ai-app .debug-panel-wrapper,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Show the printable area */
+    #louis-ai-app #printable-area {
+        display: block !important;
+        position: static;
+    }
+    
+    /* Ensure all table rows have a bottom border */
+    #louis-ai-app #printable-area table tbody tr td {
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Align month/value headers to the right */
+    #louis-ai-app #printable-area .print-table thead th:not(:first-child) {
+        text-align: right;
+    }
+
+    /* Szenariovergleich Print Styles */
+    #printable-area .szenario-management-column,
+    #printable-area .szenario-controls .form-group:not(:last-child), /* Hide scenario and kpi selection */
+    #printable-area .scenario-selection-controls {
+        display: none !important;
+    }
+
+    #printable-area .scenario-selection-buttons button {
+        border: 1px solid #ccc;
+        padding: 0.25rem 0.5rem;
+        margin: 0.25rem;
+        background-color: #f7f7f7 !important;
+        color: #000 !important;
+    }
+
+    #printable-area .scenario-selection-buttons button:not(.active) {
+        display: none;
+    }
+
+    /* Ensure chart tooltips are hidden */
+    #printable-area .chart-tooltip {
+        display: none;
+    }
+    
+    /* Force collapsible sections to be open for printing */
+    #louis-ai-app #printable-area .collapsible-section {
+        break-inside: avoid; /* Prevent sections from splitting across pages */
+    }
+    #louis-ai-app #printable-area .collapsible-content {
+        display: block !important; /* Override grid for simple block layout */
+        grid-template-rows: auto !important; /* Defeat animation */
+    }
+    #louis-ai-app #printable-area .collapsible-content-inner {
+        overflow: visible !important;
+    }
+
+    /* --- STYLES FOR STATS SCALING --- */
+    #louis-ai-app #printable-area .print-stat-page {
+        font-size: 8pt; /* Reduce base font size for more compact layout */
+    }
+
+    #louis-ai-app #printable-area .print-stat-page .collapsible-content-inner {
+        padding: 1rem 0; /* Reduce padding to gain space */
+    }
+    
+    /* Force single column layout for all stat grids initially, then override */
+    #louis-ai-app #printable-area .print-stat-page .responsive-grid,
+    #louis-ai-app #printable-area .print-stat-page .bank-statistik-grid,
+    #louis-ai-app #printable-area .print-stat-page .investor-top-grid,
+    #louis-ai-app #printable-area .print-stat-page .szenario-results-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+
+    /* --- SPECIFIC LAYOUT FIXES --- */
+
+    /* Generic container for multi-column layouts */
+    #louis-ai-app #printable-area .print-flex-container-5-cols {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    #louis-ai-app #printable-area .print-flex-container-5-cols > .table-container {
+        flex: 1 1 18%; /* Allow up to 5 items per row (100 / 5 = 20%, minus gap) */
+        min-width: 150px;
+        display: flex; /* This will override display:inline-block from other rules */
+        flex-direction: column; /* This forces the child (the table) to stretch to the container's width */
+    }
+    
+    /* Banken Statistik */
+    #louis-ai-app #printable-area .print-stat-page .bank-statistik-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+    }
+    #louis-ai-app #printable-area .print-stat-page .bank-statistik-grid > div:not(.chart-wrapper) {
+        grid-column: 1 / -1; /* Make KPI sections span full width */
+    }
+    #louis-ai-app #printable-area .bank-kpi-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    #louis-ai-app #printable-area .bank-kpi-grid > .summary-card {
+        flex: 1 1 18%;
+        min-width: 120px;
+    }
+
+    /* Investoren Statistik */
+    #louis-ai-app #printable-area .print-stat-page .investor-top-grid {
+        grid-template-columns: 1.2fr 0.8fr !important;
+        align-items: start;
+    }
+    
+    /* Fördergeber Statistik */
+    #louis-ai-app #printable-area .foerdergeber-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "kapital chart"
+            "table   table";
+        gap: 1.5rem;
+        align-items: start;
+    }
+     #louis-ai-app #printable-area .foerdergeber-kapital-section {
+        grid-area: kapital;
+    }
+    #louis-ai-app #printable-area .foerdergeber-kapital-section .responsive-grid {
+        grid-template-columns: 1fr 1fr !important; /* Make it a 2-column grid */
+    }
+    #louis-ai-app #printable-area .foerdergeber-chart-section {
+        grid-area: chart;
+    }
+    #louis-ai-app #printable-area .foerdergeber-table-section {
+        grid-area: table;
+        margin-top: 2rem;
+    }
+
+    /* Szenariovergleich */
+    #louis-ai-app #printable-area .print-stat-page .szenario-results-grid {
+        grid-template-columns: 2fr 1fr !important; /* Table gets 2/3, chart gets 1/3 */
+        align-items: start;
+        gap: 2rem;
+    }
+
+
+    /* Make charts and other blocks smaller to prevent overflow */
+    #louis-ai-app #printable-area .print-stat-page .chart-wrapper {
+        max-width: 100%;
+        margin: 0 auto 1.5rem auto; /* Center and add bottom margin */
+        break-inside: avoid;
+    }
+
+    #louis-ai-app #printable-area .print-stat-page .chart-container svg {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    #louis-ai-app #printable-area .print-stat-page .table-container {
+        max-width: 100%;
+        overflow: hidden; /* prevent horizontal scroll from breaking layout */
+        break-inside: avoid;
+        width: auto; /* Let container shrink to table size */
+        display: inline-block; /* Necessary for width: auto to work on block element */
+    }
+
+    /* Jahresübersichten Specific Styles */
+    #printable-area .print-jahresuebersicht-item {
+        break-inside: avoid;
+    }
+    #printable-area .print-jahresuebersicht-item h3 {
+        font-size: 12pt;
+        margin-bottom: 1rem;
+    }
+    #printable-area .print-summary-kpi-boxes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    #printable-area .print-summary-kpi-box {
+        border: 1px solid #ccc;
+        padding: 0.75rem;
+        border-radius: 4px;
+        background-color: #f7f7f7;
+    }
+    #printable-area .print-summary-kpi-box h4 {
+        font-size: 8pt;
+        font-weight: 600;
+        color: #555;
+        margin: 0 0 0.25rem 0;
+    }
+    #printable-area .print-summary-kpi-box p {
+        font-size: 12pt;
+        font-weight: 600;
+        margin: 0;
+    }
+    #printable-area .print-jahresuebersicht-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+    #printable-area .print-jahresuebersicht-grid .print-chart-wrapper,
+    #printable-area .print-jahresuebersicht-grid .print-table-wrapper {
+        width: 100%;
+    }
+    #printable-area .print-jahresuebersicht-grid h4 {
+        font-size: 10pt;
+        margin-bottom: 0.5rem;
+    }
+    #printable-area .print-table.summary-kpi-table {
+        font-size: 8pt;
+    }
+    #printable-area .print-table.summary-kpi-table td,
+    #printable-area .print-table.summary-kpi-table th {
+        padding: 0.4rem 0.6rem;
+    }
+    #printable-area .print-table.summary-kpi-table td:last-child,
+    #printable-area .print-table.summary-kpi-table th:last-child {
+        text-align: right;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 1.5cm;
+}
+
+/* --- PRINT VIEW STYLES --- */
+#louis-ai-app #printable-area {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header */
+#louis-ai-app .print-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1rem;
+}
+#louis-ai-app .print-logo {
+    display: none; /* Logo removed as per request */
+}
+#louis-ai-app .print-header-text h1 {
+    font-size: 18pt;
+    font-weight: 600;
+    margin: 0;
+}
+#louis-ai-app .print-header-text p {
+    font-size: 10pt;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+/* Page Layout */
+#louis-ai-app .print-page {
+    page-break-after: always;
+}
+#louis-ai-app .print-page:last-child {
+    page-break-after: avoid;
+}
+
+#louis-ai-app .print-page-title {
+    font-size: 16pt;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+#louis-ai-app .print-year-section {
+    margin-bottom: 2rem;
+    break-inside: avoid;
+}
+#louis-ai-app .print-year-section h3 {
+    font-size: 12pt;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+#louis-ai-app .print-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+#louis-ai-app .print-overview-item {
+    break-inside: avoid;
+}
+#louis-ai-app .print-overview-item h3 {
+    font-size: 11pt;
+    margin-bottom: 0.5rem;
+}
+#louis-ai-app .print-product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Tables */
+#louis-ai-app .print-table,
+#louis-ai-app .stammdaten-table,
+#louis-ai-app #printable-area .gewinn-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    line-height: 1.4;
+}
+#louis-ai-app .print-table th, 
+#louis-ai-app .print-table td,
+#louis-ai-app .stammdaten-table td,
+#louis-ai-app #printable-area .gewinn-table th,
+#louis-ai-app #printable-area .gewinn-table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
+#louis-ai-app .print-table th,
+#louis-ai-app #printable-area .gewinn-table th {
+    background-color: #f7f7f7;
+    font-weight: 600;
+}
+
+/* Stammdaten Table Specifics */
+#louis-ai-app .stammdaten-table {
+    width: 60%;
+    margin-bottom: 2rem;
+}
+#louis-ai-app .stammdaten-table td:first-child {
+    font-weight: 600;
+    background-color: #f7f7f7;
+    width: 40%;
+}
+
+/* General Table Formatting */
+#louis-ai-app .print-table .text-right {
+    text-align: right;
+}
+#louis-ai-app .print-table .total-row td {
+    font-weight: 600;
+    border-top: 2px solid #333;
+    background-color: #f7f7f7;
+}
+#louis-ai-app .print-table .negative {
+    color: #d00;
+}
+#louis-ai-app .print-table .positive {
+    color: #006644;
+}
+
+/* Statistics components inside print view */
+#louis-ai-app #printable-area .collapsible-section {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+#louis-ai-app #printable-area .collapsible-header {
+    display: none;
+}
+#louis-ai-app #printable-area .collapsible-content-inner {
+    padding: 0;
+    border: none;
+}
+#louis-ai-app #printable-area .chart-container svg {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#louis-ai-app #printable-area .summary-card {
+    border: 1px solid #ccc;
+}
+#louis-ai-app #printable-area .kpi-detail-list li {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 0.35rem 0.75rem;
+}
+#louis-ai-app #printable-area .kpi-detail-list li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+#louis-ai-app #printable-area .print-stat-page .print-table {
+    width: auto; /* Override width: 100% for stat page tables */
+}

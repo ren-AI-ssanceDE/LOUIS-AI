@@ -1,0 +1,8 @@
+/**
+ * @license
+ * Copyright 2024 Stefan Tusk Beratung|Coaching|Training, www.ren-ai-ssance.de
+ * All Rights Reserved.
+ *
+ * This file has been refactored. Styles are now loaded from the /styles/ directory
+ * via imports in App.tsx. This improves maintainability and scalability.
+ */

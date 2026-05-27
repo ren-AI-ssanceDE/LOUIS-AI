@@ -1,0 +1,774 @@
+/**
+ * @license
+ * Copyright 2024 Stefan Tusk Beratung|Coaching|Training, www.ren-ai-ssance.de
+ * All Rights Reserved.
+ */
+
+/* --- VIEW-SPECIFIC STYLES --- */
+#louis-ai-app .responsive-grid {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+#louis-ai-app .responsive-grid:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Übersicht / Statistics --- */
+#louis-ai-app .uebersicht-summary-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (min-width: 1280px) {
+    #louis-ai-app .uebersicht-summary-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+#louis-ai-app .summary-card { background-color: var(--background-color); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); }
+#louis-ai-app .summary-card h3 { font-size: 1rem; color: var(--secondary-color); margin: 0 0 0.5rem 0; font-weight: 500; }
+#louis-ai-app .summary-card p { font-size: 1.75rem; font-weight: 600; margin: 0; }
+
+#louis-ai-app .investor-top-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+@media (max-width: 992px) { 
+    #louis-ai-app .investor-top-grid { grid-template-columns: 1fr; } 
+}
+
+#louis-ai-app .statistik-container {
+    max-width: 1620px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+#louis-ai-app .bank-statistik-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    #louis-ai-app .bank-statistik-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Screen layout for FoerdergeberStatistik */
+#louis-ai-app .foerdergeber-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+#louis-ai-app .foerdergeber-kapital-section {
+    grid-column: 1 / -1; /* Span full width on screen */
+}
+#louis-ai-app .foerdergeber-chart-section {
+    grid-column: 1 / 2;
+}
+#louis-ai-app .foerdergeber-table-section {
+    grid-column: 2 / 3;
+}
+
+
+#louis-ai-app .bank-kpi-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+#louis-ai-app .bank-statistik-grid h4,
+#louis-ai-app .foerdergeber-statistik-grid h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#louis-ai-app .kpi-section {
+    display: flex;
+    flex-direction: column;
+}
+#louis-ai-app .kpi-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 50%;
+}
+#louis-ai-app .kpi-card {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+#louis-ai-app .kpi-card h3 {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin: 0 0 0.25rem 0;
+    font-weight: 500;
+}
+#louis-ai-app .kpi-card p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+#louis-ai-app .kpi-detail-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+#louis-ai-app .kpi-detail-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border-color);
+    gap: 0.5rem;
+}
+#louis-ai-app .kpi-detail-list li:last-child {
+    border-bottom: none;
+}
+#louis-ai-app .kpi-detail-list li span:first-child {
+    overflow-wrap: break-word;
+    word-break: break-word; /* fallback */
+    min-width: 0;
+}
+#louis-ai-app .kpi-detail-list span:last-child {
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: right;
+}
+
+
+#louis-ai-app .gewinn-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#louis-ai-app .gewinn-table th,
+#louis-ai-app .gewinn-table td {
+    padding: 1.2rem 1.8rem;
+    border-bottom: 1px solid var(--border-color);
+}
+#louis-ai-app .gewinn-table thead th {
+    text-align: left;
+}
+#louis-ai-app .gewinn-table thead th[colspan] {
+    text-align: center;
+}
+#louis-ai-app .gewinn-table thead th.calculated-cell {
+    text-align: right;
+}
+#louis-ai-app .gewinn-table tbody tr:last-child td {
+    border-bottom: none;
+}
+#louis-ai-app .gewinn-table .total-row {
+    font-weight: 700;
+    background-color: transparent;
+}
+#louis-ai-app .gewinn-table .total-row td {
+    border-top: 1px solid var(--secondary-color);
+}
+
+/* --- Grundeinstellungen --- */
+#louis-ai-app .grundeinstellungen-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+@media (max-width: 992px) { #louis-ai-app .grundeinstellungen-layout { grid-template-columns: 1fr; } }
+#louis-ai-app .grundeinstellungen-side-cards { display: flex; flex-direction: column; gap: 2rem; }
+#louis-ai-app .grundeinstellungen-side-cards .card > button { margin-top: 1.5rem; }
+
+/* --- Finanzierungsplan --- */
+#louis-ai-app .finanzierungsplan-top-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+/* Custom fixes for specific view layouts */
+#louis-ai-app .finanzierungsplan-top-grid + .tooltip-wrapper {
+    display: block !important; /* Use !important to override inline style from component */
+}
+/* Right-align numeric headers in tables */
+#louis-ai-app .finanzierungsplan-table table th:nth-child(2),
+#louis-ai-app .finanzierungsplan-table table th:nth-child(3),
+#louis-ai-app .finanzierungsplan-table table th:nth-child(4),
+#louis-ai-app .startup-costs-table th:nth-child(2) {
+    text-align: right;
+}
+
+/* --- ProduktPreiskalkulation --- */
+#louis-ai-app .produkt-kalkulation-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+@media (max-width: 992px) { #louis-ai-app .produkt-kalkulation-grid { grid-template-columns: 1fr; } }
+#louis-ai-app .produkt-kalkulation-grid .table-container { margin-top: 0; }
+#louis-ai-app .side-settings-card { background-color: var(--background-color); padding: 1.5rem; border-radius: 8px; }
+#louis-ai-app .side-settings-card h3 { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+#louis-ai-app .product-details-table table th:nth-child(3) { text-align: right; }
+
+/* --- Ertragsplan --- */
+#louis-ai-app .sub-row-header td { font-weight: 600; padding-top: 1.5rem; background-color: var(--background-color); }
+#louis-ai-app .sub-row-header .sticky-col { background-color: var(--background-color); }
+#louis-ai-app .sub-label { padding-left: 2rem !important; }
+#louis-ai-app .sub-label-deep { padding-left: 4rem !important; }
+#louis-ai-app .opcost-sub-row .sub-label-deep { font-weight: normal; }
+#louis-ai-app .opcost-label-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#louis-ai-app .opcost-label-content .row-header {
+    flex-grow: 1; /* Allow the text to take up available space */
+    min-width: 0;  /* Prevent text from overflowing */
+}
+#louis-ai-app .opcost-toggle {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background-color 0.2s;
+    flex-shrink: 0;
+}
+#louis-ai-app .opcost-toggle:hover { background-color: var(--background-color); }
+#louis-ai-app .opcost-toggle svg { transition: transform 0.2s; }
+#louis-ai-app .opcost-toggle.expanded svg { transform: rotate(90deg); }
+#louis-ai-app .opcost-sub-row-name { font: inherit; color: inherit; padding: 4px; flex-grow: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#louis-ai-app .opcost-sub-row-name-input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    font: inherit;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    flex-grow: 1;
+    min-width: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+#louis-ai-app .opcost-sub-row-name-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.2);
+}
+#louis-ai-app .add-subitem-cell { padding-left: 4rem !important; }
+
+/* --- Einstellungen --- */
+#louis-ai-app .einstellungen-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; align-items: start; }
+#louis-ai-app .einstellungen-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#louis-ai-app .einstellungen-column > .card,
+#louis-ai-app .einstellungen-column > .tooltip-wrapper > .card {
+    margin-bottom: 0;
+}
+#louis-ai-app .settings-section { margin-bottom: 2rem; }
+#louis-ai-app .settings-section:not(:last-child) { border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; }
+#louis-ai-app .settings-section > h3 { margin-top: 0; }
+#louis-ai-app .restore-points-list { list-style: none; padding: 0; }
+#louis-ai-app .restore-point-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; border-radius: 4px; transition: background-color 0.2s; }
+#louis-ai-app .restore-point-item:nth-child(odd) { background-color: var(--background-color); }
+#louis-ai-app .restore-point-info { display: flex; flex-direction: column; }
+#louis-ai-app .restore-point-date { font-weight: 600; }
+#louis-ai-app .restore-point-project { font-size: 0.9rem; color: var(--secondary-color); }
+#louis-ai-app .saved-chats-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+#louis-ai-app .saved-chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+#louis-ai-app .saved-chat-item:last-child {
+    border-bottom: none;
+}
+#louis-ai-app .saved-chat-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+#louis-ai-app .einstellungen-column .card > .tooltip-wrapper {
+    display: block !important; /* Override inline-block style from component */
+    margin-bottom: 2rem;
+}
+#louis-ai-app .einstellungen-column .card > .tooltip-wrapper:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+#louis-ai-app .einstellungen-column .card > .tooltip-wrapper > .settings-section {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#louis-ai-app .license-status { display: flex; align-items: center; gap: 0.75rem; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; }
+#louis-ai-app .license-status.licensed { background-color: rgba(0, 102, 68, 0.1); color: var(--positive-color); }
+#louis-ai-app .license-status.unlicensed { background-color: rgba(222, 53, 11, 0.1); color: var(--danger-color); }
+#louis-ai-app .license-status svg { flex-shrink: 0; }
+#louis-ai-app .theme-switcher { display: flex; align-items: center; gap: 0.75rem; }
+#louis-ai-app .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+#louis-ai-app .switch input { opacity: 0; width: 0; height: 0; }
+#louis-ai-app .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+#louis-ai-app .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+#louis-ai-app input:checked + .slider { background-color: var(--primary-color); }
+#louis-ai-app input:checked + .slider:before { transform: translateX(26px); }
+#louis-ai-app .einstellungen-layout .persona-selection-container { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+#louis-ai-app .persona-card { display: flex; flex-direction: column; border: 2px solid var(--border-color); border-radius: 8px; padding: 1.5rem; transition: all 0.2s; }
+#louis-ai-app .persona-card:hover { border-color: var(--primary-color); }
+#louis-ai-app .persona-card.active { border-color: var(--primary-color); box-shadow: 0 0 0 2px var(--primary-color); }
+#louis-ai-app .persona-card h4 { margin-top: 0; margin-bottom: 0.5rem; }
+#louis-ai-app .persona-card-summary { color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1; }
+#louis-ai-app .persona-card-actions { display: flex; gap: 0.75rem; margin-top: auto; flex-wrap: wrap; }
+#louis-ai-app .persona-prompt { font-style: italic; color: var(--secondary-color); font-size: 0.9rem; }
+#louis-ai-app .persona-prompt p { margin-bottom: 0.75rem; }
+#louis-ai-app .persona-prompt ul { list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem; font-style: normal; }
+#louis-ai-app .persona-prompt li { margin-bottom: 0.25rem; }
+#louis-ai-app .persona-management-actions { display: flex; gap: 1rem; margin-top: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+#louis-ai-app .persona-editor-modal .form-group textarea { min-height: 200px; resize: vertical; }
+#louis-ai-app .persona-selection-controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+#louis-ai-app .persona-selection-controls select {
+    flex-grow: 1;
+}
+
+#louis-ai-app .input-with-action {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+#louis-ai-app .input-with-action input {
+    flex-grow: 1;
+}
+
+#louis-ai-app .btn-small {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+#louis-ai-app .test-status {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+#louis-ai-app .test-status.success {
+    background-color: rgba(0, 102, 68, 0.1);
+    color: var(--positive-color);
+    border: 1px solid rgba(0, 102, 68, 0.2);
+}
+
+#louis-ai-app .test-status.error {
+    background-color: rgba(222, 53, 11, 0.1);
+    color: var(--danger-color);
+    border: 1px solid rgba(222, 53, 11, 0.2);
+}
+
+#louis-ai-app .test-status.loading {
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+#louis-ai-app .loading::after {
+    content: "...";
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: ""; }
+    40% { content: "."; }
+    60% { content: ".."; }
+    80%, 100% { content: "..."; }
+}
+
+/* --- Collapsible Sections (Uebersicht) --- */
+#louis-ai-app .uebersicht-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#louis-ai-app .collapsible-section.card {
+    padding: 0;
+    overflow: hidden; /* For smooth transitions */
+}
+
+#louis-ai-app .collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    transition: background-color 0.2s;
+}
+
+#louis-ai-app .collapsible-header:hover {
+    background-color: var(--background-color);
+}
+
+#louis-ai-app .collapsible-header h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.5rem;
+}
+
+#louis-ai-app .collapsible-icon {
+    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    color: var(--secondary-color);
+}
+
+#louis-ai-app .collapsible-header:hover .collapsible-icon {
+    color: var(--text-color);
+}
+
+#louis-ai-app .collapsible-icon.expanded {
+    transform: rotate(180deg);
+}
+
+#louis-ai-app .collapsible-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+}
+
+#louis-ai-app .collapsible-content.expanded {
+    grid-template-rows: 1fr;
+}
+
+#louis-ai-app .collapsible-content-inner {
+    overflow: hidden;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+#louis-ai-app .year-detail-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+#louis-ai-app .year-detail-section:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+#louis-ai-app .year-detail-section h3 {
+    font-size: 1.2rem !important; /* Ensure override */
+    margin-bottom: 1.5rem;
+}
+
+#louis-ai-app .year-overview-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: end;
+}
+
+@media (max-width: 992px) {
+    #louis-ai-app .year-overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#louis-ai-app .year-chart-container {
+    min-width: 0; /* Prevents chart from overflowing its grid cell */
+}
+
+#louis-ai-app .year-summary-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+#louis-ai-app .summary-kpi-table {
+    width: 100%;
+}
+
+#louis-ai-app .summary-kpi-table-wrapper {
+    width: fit-content;
+}
+
+#louis-ai-app .summary-kpi-table-wrapper thead.sticky-header th:first-child {
+    text-align: left;
+}
+
+#louis-ai-app .summary-kpi-table td:last-child,
+#louis-ai-app .summary-kpi-table th:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* --- Szenariovergleich --- */
+#louis-ai-app .szenario-top-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    max-width: 50%;
+}
+#louis-ai-app .szenario-results-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    column-gap: 4rem;
+    row-gap: 4rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+@media (max-width: 1200px) {
+    #louis-ai-app .szenario-results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+#louis-ai-app .szenario-management-column h4 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+#louis-ai-app .management-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+#louis-ai-app .management-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+#louis-ai-app .management-list-item:last-child {
+    border-bottom: none;
+}
+#louis-ai-app .management-list-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex-grow: 1;
+    min-width: 0;
+}
+#louis-ai-app .management-list-item-info > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#louis-ai-app .szenario-controls .form-group {
+    margin-bottom: 2.5rem;
+}
+
+#louis-ai-app .scenario-modal {
+    max-width: 800px;
+}
+#louis-ai-app .scenario-adjustments-list {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    background-color: var(--background-color);
+}
+#louis-ai-app .scenario-adjustments-list:has(> .help-text) {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    max-height: none;
+    overflow: visible;
+}
+#louis-ai-app .scenario-adjustment-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--content-bg);
+}
+
+#louis-ai-app .adjustment-main-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+}
+
+#louis-ai-app .adjustment-main-row .adjustment-row {
+    flex: 1 1 0;
+    min-width: 150px;
+}
+
+#louis-ai-app .adjustment-main-row .btn-icon-danger {
+    margin-bottom: 2px;
+}
+
+#louis-ai-app .scenario-adjustment-item > .adjustment-row {
+    width: 66%;
+}
+
+#louis-ai-app .adjustment-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#louis-ai-app .adjustment-row > label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+#louis-ai-app .input-with-suffix {
+    display: flex;
+    align-items: center;
+}
+#louis-ai-app .input-with-suffix input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    flex-grow: 1;
+}
+#louis-ai-app .input-with-suffix span {
+    padding: 0.4rem 0.8rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--input-border);
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    font-size: 1rem;
+}
+
+#louis-ai-app .year-range-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#louis-ai-app .year-range-selector select {
+    flex-grow: 1;
+}
+
+/* --- Scenario Selection Buttons --- */
+#louis-ai-app .scenario-selection-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+#louis-ai-app .scenario-selection-buttons button {
+    /* New toggle button style */
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 6px; /* Less rounded than a chip */
+    border: 1px solid var(--input-border); /* Subtle border for inactive state */
+    background-color: var(--content-bg); /* Use content background */
+    color: var(--text-color);
+    font-weight: 500; /* A bit bolder for readability */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    line-height: 1.2; /* Adjusted to make padding more effective */
+}
+
+#louis-ai-app .scenario-selection-buttons button:hover:not(:disabled):not(.active) {
+    border-color: var(--primary-color);
+    background-color: var(--background-color); /* Slight bg change on hover */
+}
+
+#louis-ai-app .scenario-selection-buttons button.active {
+    background-color: var(--primary-color);
+    color: white; /* This is okay for light theme primary */
+    border-color: var(--primary-color);
+}
+
+#louis-ai-app .scenario-selection-buttons button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#louis-ai-app.dark-theme .scenario-selection-buttons button.active {
+    color: #0f172a; /* A very dark color for high contrast on light blue background */
+}
+
+
+/* --- Char Counter for Scenario Modal --- */
+#louis-ai-app .char-counter {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    text-align: right;
+    margin-top: 0.25rem;
+}
+
+#louis-ai-app .scenario-selection-controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+#louis-ai-app .scenario-selection-controls select {
+    flex-grow: 1;
+}
+
+#louis-ai-app .scenario-modal select,
+#louis-ai-app .scenario-modal .input-with-suffix input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-radius: 4px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#louis-ai-app .scenario-modal .input-with-suffix input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#louis-ai-app .scenario-modal select:focus,
+#louis-ai-app .scenario-modal .input-with-suffix input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+#louis-ai-app .scenario-modal .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 200px;
+}

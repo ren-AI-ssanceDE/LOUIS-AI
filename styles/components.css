@@ -1,0 +1,1370 @@
+/**
+ * @license
+ * Copyright 2024 Stefan Tusk Beratung|Coaching|Training, www.ren-ai-ssance.de
+ * All Rights Reserved.
+ */
+
+/* --- INFO BOX --- */
+#louis-ai-app .info-box {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    color: #0050b3;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0 0 1.5rem 0;
+}
+#louis-ai-app .info-box p {
+    margin-bottom: 0.5rem;
+}
+#louis-ai-app .info-box p:last-child {
+    margin-bottom: 0;
+}
+#louis-ai-app .info-box strong {
+    font-weight: 600;
+}
+
+#louis-ai-app.dark-theme .info-box {
+    background-color: #112a45;
+    border-color: #1d3959;
+    color: #93c5fd;
+}
+
+/* --- GENERIC COMPONENTS --- */
+#louis-ai-app .card { background-color: var(--content-bg); border-radius: 8px; box-shadow: var(--shadow-md); padding: 2rem; margin-bottom: 2rem; transition: background-color 0.2s, border-color 0.2s; border: 1px solid var(--border-color); }
+#louis-ai-app .card h2 { font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-top: 0; }
+#louis-ai-app .card h3 { font-size: 1.2rem; margin-bottom: 1rem; margin-top: 2rem; }
+#louis-ai-app .card h4 { font-size: 1.1rem; margin-bottom: 1rem; margin-top: 1rem; }
+#louis-ai-app .form-group { margin-bottom: 1.25rem; }
+#louis-ai-app .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+#louis-ai-app .form-group input[type="text"], #louis-ai-app .form-group input[type="date"], #louis-ai-app .form-group input[type="number"], #louis-ai-app .form-group input[type="password"], #louis-ai-app .form-group input[type="email"], #louis-ai-app .form-group select, #louis-ai-app .form-group textarea { width: 100%; padding: 0.6rem 0.8rem; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-color); border-radius: 4px; font-family: var(--font-family); font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+
+#louis-ai-app .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1.25rem;
+    padding-right: 2.5rem;
+}
+#louis-ai-app .form-group input:focus, #louis-ai-app .form-group select:focus, #louis-ai-app .form-group textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.2); }
+#louis-ai-app .form-group.inline { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+#louis-ai-app .form-group.inline label { margin-bottom: 0; flex-shrink: 0; }
+#louis-ai-app .form-group.inline input[type="range"] { flex-grow: 1; }
+#louis-ai-app .form-group.inline span { min-width: 40px; text-align: right; }
+#louis-ai-app .help-text { font-size: 0.8rem; color: var(--secondary-color); margin-top: 0.5rem; }
+#louis-ai-app .help-text-inline { font-size: 0.8rem; color: var(--secondary-color); margin-left: 0.5rem; }
+
+
+#louis-ai-app input::-webkit-outer-spin-button, #louis-ai-app input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+#louis-ai-app input[type=number] { -moz-appearance: textfield; }
+
+/* --- CUSTOM RANGE SLIDER --- */
+#louis-ai-app input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 3px;
+    outline: none;
+}
+
+#louis-ai-app input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid var(--content-bg);
+    margin-top: -6px; /* Vertically center thumb on track */
+}
+
+#louis-ai-app input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid var(--content-bg);
+}
+
+#louis-ai-app input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+
+/* --- BUTTONS --- */
+#louis-ai-app .btn-primary { background-color: var(--primary-color); color: white; }
+#louis-ai-app .btn-primary, #louis-ai-app .btn-secondary, #louis-ai-app .btn-danger, #louis-ai-app .btn-link { padding: 0.6rem 1.2rem; border-radius: 4px; border: 1px solid transparent; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; text-align: center; }
+#louis-ai-app .btn-primary:hover { background-color: var(--primary-hover-color); }
+#louis-ai-app .btn-primary:disabled { background-color: var(--secondary-color); cursor: not-allowed; opacity: 0.7; }
+#louis-ai-app .btn-secondary { background-color: var(--secondary-color); color: white; }
+#louis-ai-app .btn-secondary:hover { background-color: var(--secondary-hover-color); }
+#louis-ai-app .btn-danger { background-color: var(--danger-color); color: white; }
+#louis-ai-app .btn-danger:hover { background-color: var(--danger-hover-color); }
+#louis-ai-app .btn-link { background: none; border: none; color: var(--primary-color); padding: 0; }
+#louis-ai-app .btn-link:hover { text-decoration: underline; }
+
+
+/* --- EMAIL MODAL ENHANCEMENTS --- */
+#louis-ai-app .modal-content.email-modal {
+    max-width: 1200px;
+    width: 95%;
+}
+
+#louis-ai-app .email-modal-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 1.5rem;
+    align-items: start;
+}
+
+#louis-ai-app .email-modal-grid > div:first-child {
+    padding-top: 4px; /* Slight adjustment to align with right column header */
+}
+
+#louis-ai-app .email-message-full-width {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+}
+
+@media (max-width: 850px) {
+    #louis-ai-app .email-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+#louis-ai-app .email-form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#louis-ai-app .email-attachments-section {
+    background-color: var(--sidebar-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    color: #fff; /* Base text color for the dark area */
+}
+
+#louis-ai-app .email-attachments-section h3 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.75rem;
+    color: #fff !important; /* Force readable title */
+}
+
+#louis-ai-app .attachment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+#louis-ai-app .manual-upload {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#louis-ai-app .attachment-options .checkbox-label {
+    color: #e5e7eb;
+}
+
+#louis-ai-app .language-switcher select {
+    width: 200px;
+}
+
+#louis-ai-app .attachment-list {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#louis-ai-app .attachment-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+}
+
+#louis-ai-app .attachment-item .file-name {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #f3f4f6;
+}
+
+#louis-ai-app .attachment-item .remove-btn {
+    background: none;
+    border: none;
+    color: #f87171;
+    font-size: 1.3rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 0.3rem;
+}
+
+#louis-ai-app .rag-attachments {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.25rem;
+}
+
+#louis-ai-app .rag-attachments h4 {
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    font-size: 1rem;
+    color: #9ca3af !important;
+}
+
+#louis-ai-app .rag-docs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#louis-ai-app .rag-doc-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+    color: #d1d5db;
+}
+
+#louis-ai-app .rag-doc-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+#louis-ai-app .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* --- SPINNER --- */
+#louis-ai-app .spinner-small {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#louis-ai-app .kb-list-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--input-bg);
+}
+
+#louis-ai-app .btn-icon, #louis-ai-app .btn-icon-danger {
+    background: transparent;
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0;
+    flex-shrink: 0;
+}
+#louis-ai-app .btn-icon:hover { background-color: var(--background-color); color: var(--text-color); }
+
+#louis-ai-app .btn-icon-square {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 0;
+    flex-shrink: 0;
+}
+#louis-ai-app .btn-icon-square:hover {
+    background-color: var(--primary-hover-color);
+}
+
+#louis-ai-app .btn-icon-danger {
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+}
+#louis-ai-app .btn-icon-danger:hover { background-color: var(--danger-hover-color); }
+#louis-ai-app .btn-icon-danger:disabled {
+    background-color: var(--secondary-color);
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#louis-ai-app .btn-icon-danger svg {
+    width: 16px;
+    height: 16px;
+}
+
+#louis-ai-app .btn-icon-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 0;
+    flex-shrink: 0;
+}
+#louis-ai-app .btn-icon-primary:hover {
+    background-color: var(--primary-hover-color);
+}
+#louis-ai-app .btn-icon-primary:disabled {
+    background-color: var(--secondary-color);
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#louis-ai-app .btn-fill-forward { background: transparent; border: none; cursor: pointer; padding: 2px; margin: 0 4px; opacity: 0; transition: opacity 0.2s, color 0.2s; color: var(--secondary-color); }
+#louis-ai-app .input-cell-content:hover .btn-fill-forward { opacity: 0.6; }
+#louis-ai-app .btn-fill-forward:hover { opacity: 1; color: var(--primary-color); }
+
+/* --- FIX FOR STRETCHED SVG ICONS IN FLEX CONTAINERS --- */
+#louis-ai-app .btn-icon-square svg,
+#louis-ai-app .btn-icon-primary svg,
+#louis-ai-app .btn-icon-danger svg {
+    flex: none; /* Prevents SVG from growing/shrinking inside its flex container button */
+}
+
+/* --- TABLE STYLES --- */
+#louis-ai-app .table-container { overflow-x: auto; width: 100%; border: 1px solid var(--border-color); border-radius: 8px; margin-top: 1.5rem; }
+#louis-ai-app .table-container-fit-content {
+    width: fit-content;
+    max-width: 100%; /* Prevent overflow on small screens while allowing shrink */
+}
+#louis-ai-app table { width: 100%; border-collapse: collapse; }
+#louis-ai-app th, #louis-ai-app td { 
+    padding: 1.125rem 1.5rem; 
+    text-align: left; 
+    border-bottom: 1px solid var(--border-color); 
+    vertical-align: middle; 
+    color: var(--text-color);
+}
+#louis-ai-app th { white-space: normal; }
+#louis-ai-app td { white-space: normal; }
+#louis-ai-app thead th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+}
+#louis-ai-app thead.sticky-header th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Align month and total headers to the right to match cell content */
+#louis-ai-app thead.sticky-header th:not(.sticky-col):not(.total-col) {
+    text-align: right;
+    padding-right: 2.1rem;
+}
+
+#louis-ai-app tbody tr:last-child td { border-bottom: none; }
+#louis-ai-app tbody tr:hover { background-color: var(--background-color); }
+#louis-ai-app .sticky-col { position: sticky; left: 0; background-color: var(--content-bg); z-index: 5; min-width: 250px; max-width: 400px; border-right: 1px solid var(--border-color); transition: background-color 0.2s, box-shadow 0.2s; white-space: normal; }
+#louis-ai-app tbody tr:hover .sticky-col { background-color: var(--background-color); z-index: 20; }
+#louis-ai-app thead.sticky-header .sticky-col { z-index: 15; background-color: var(--table-header-bg); }
+
+#louis-ai-app .row-header { font-weight: 500; min-width: 200px; white-space: normal; overflow-wrap: break-word; hyphens: auto; }
+#louis-ai-app .input-cell input, #louis-ai-app .input-cell select { width: 100%; padding: 0.4rem 0.6rem; border-radius: 4px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-color); min-width: 100px; font-family: inherit; font-size: 1rem; white-space: nowrap; }
+#louis-ai-app .input-cell input[type="text"], #louis-ai-app .input-cell input[type="number"] { text-align: right; }
+#louis-ai-app .input-cell-content { display: flex; align-items: center; }
+#louis-ai-app .input-cell-content.with-fill-forward input { flex-grow: 1; }
+#louis-ai-app .input-cell.disabled { text-align: right; }
+#louis-ai-app .input-cell .calculated-input, #louis-ai-app .input-cell.disabled > span { display: block; width: 100%; padding: 0.4rem 0.6rem; min-width: 100px; text-align: right; }
+#louis-ai-app .calculated-cell { font-weight: 500; text-align: right; }
+#louis-ai-app td.total-col, #louis-ai-app th.total-col { font-weight: 700; text-align: right; background-color: var(--table-total-bg); border-left: 1px solid var(--border-color); white-space: nowrap; }
+#louis-ai-app .total-row { font-weight: 700; background-color: var(--table-total-bg); }
+#louis-ai-app .total-row td { border-top: 2px solid var(--border-color); }
+#louis-ai-app .total-row .sticky-col { background-color: var(--table-total-bg); }
+#louis-ai-app .positive {
+    color: var(--positive-color);
+}
+#louis-ai-app .negative {
+    color: var(--negative-color);
+}
+#louis-ai-app .action-cell { text-align: center; }
+#louis-ai-app .total-col-content { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; }
+#louis-ai-app td.total-col > span {
+    display: block;
+    padding: 0.4rem 0.6rem;
+}
+
+#louis-ai-app .add-item-row td {
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- TABS --- */
+#louis-ai-app .view-header-with-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+#louis-ai-app .tabs-container { display: flex; flex-wrap: wrap; flex-grow: 1; align-items: center; }
+#louis-ai-app .tab { padding: 0.75rem 1.25rem; cursor: pointer; border: 1px solid transparent; border-bottom: none; margin-bottom: -2px; color: var(--secondary-color); border-radius: 6px 6px 0 0; transition: all 0.2s ease; display: flex; align-items: center; gap: 0.5rem; }
+#louis-ai-app .tab:hover { background-color: var(--background-color); }
+#louis-ai-app .tab.active { background-color: var(--content-bg); border-color: var(--border-color); border-bottom: 2px solid var(--content-bg); font-weight: 600; color: var(--primary-color); }
+#louis-ai-app .tab-input { background: transparent; border: none; color: inherit; font: inherit; padding: 2px; border-radius: 2px; }
+#louis-ai-app .tab-input:focus { outline: none; background: var(--input-bg); box-shadow: 0 0 0 1px var(--primary-color); }
+
+#louis-ai-app .tab-content { padding-top: 1rem; }
+
+/* --- SAVE LINK --- */
+#louis-ai-app .save-link {
+    transition: color 0.2s, background-color 0.2s;
+}
+#louis-ai-app .save-link.saved { color: var(--positive-color) !important; }
+#louis-ai-app .save-link.unsaved { color: #f59e0b !important; font-weight: bold; }
+#louis-ai-app.dark-theme .save-link.unsaved { color: #fcd34d !important; }
+#louis-ai-app .save-link.saving { color: var(--secondary-color) !important; cursor: wait; }
+
+
+/* --- MODAL STYLES --- */
+#louis-ai-app .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+#louis-ai-app .modal-content { background-color: var(--content-bg); padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-md); width: 90%; max-width: 600px; max-height: 90vh; overflow-y: auto; }
+#louis-ai-app .modal-content h2 { margin-top: 0; }
+#louis-ai-app .modal-actions { margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; }
+#louis-ai-app .modal-actions.left-aligned { justify-content: flex-start; }
+#louis-ai-app .modal-action-group { display: flex; align-items: center; gap: 1rem; }
+#louis-ai-app .modal-actions-stacked { margin-top: 2rem; display: flex; flex-direction: column; align-items: stretch; gap: 1rem; }
+#louis-ai-app .modal-content .form-group {
+    margin-top: 1.5rem;
+}
+#louis-ai-app .modal-warning { background-color: #fffbe6; border: 1px solid #ffe58f; padding: 1rem; border-radius: 4px; margin: 1rem 0; }
+#louis-ai-app.dark-theme .modal-warning { background-color: #3d3b00; border-color: #8c8600; }
+#louis-ai-app .print-options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+#louis-ai-app .print-options-group-title { grid-column: 1 / -1; font-size: 1.1rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+#louis-ai-app .print-options-group-title:first-of-type { margin-top: 0; }
+
+/* Error Modal Specifics */
+#louis-ai-app .modal-content .modal-icon-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* h2 has margin-bottom, so we don't need it here */
+}
+#louis-ai-app .modal-content .modal-icon-header h2 {
+    margin-bottom: 0;
+}
+#louis-ai-app .modal-icon-header .icon-wrapper {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#louis-ai-app .modal-icon-header .icon-wrapper.error {
+    background-color: rgba(222, 53, 11, 0.1);
+    color: var(--danger-color);
+}
+#louis-ai-app.dark-theme .modal-icon-header .icon-wrapper.error {
+     background-color: rgba(248, 113, 113, 0.15);
+}
+
+/* Email Modal Attachment List */
+#louis-ai-app .email-attachment-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+#louis-ai-app .email-attachment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+}
+#louis-ai-app .email-attachment-item:last-child {
+    border-bottom: none;
+}
+#louis-ai-app .email-attachment-item span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Rich Text Editor */
+#louis-ai-app .rich-text-editor {
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    margin-top: 1.25rem;
+}
+#louis-ai-app .rich-text-editor:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.2);
+}
+#louis-ai-app .rte-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    border-radius: 4px 4px 0 0;
+}
+#louis-ai-app .rte-toolbar button {
+    font-family: var(--font-family);
+    border: 1px solid transparent;
+    background-color: var(--content-bg);
+    border-radius: 4px;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: background-color 0.2s;
+}
+#louis-ai-app .rte-toolbar button:hover {
+    background-color: var(--background-color);
+}
+#louis-ai-app .rte-toolbar button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+#louis-ai-app .rte-toolbar button.rte-icon-btn {
+    font-weight: normal;
+}
+#louis-ai-app .rte-content {
+    padding: 0.6rem 0.8rem;
+    min-height: 150px;
+    resize: vertical;
+    overflow-y: auto;
+    color: var(--text-color);
+    border-radius: 0 0 4px 4px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+#louis-ai-app .rte-content:focus {
+    outline: none;
+}
+#louis-ai-app .rte-content b, #louis-ai-app .rte-content strong { font-weight: bold; }
+#louis-ai-app .rte-content i, #louis-ai-app .rte-content em { font-style: italic; }
+#louis-ai-app .rte-content u { text-decoration: underline; }
+#louis-ai-app .rte-content ul, #louis-ai-app .rte-content ol { padding-left: 2rem; }
+
+
+/* Custom Checkbox & Radio Styles */
+#louis-ai-app .checkbox-label,
+#louis-ai-app .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: normal;
+    transition: background-color 0.2s;
+}
+
+#louis-ai-app .radio-label {
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+#louis-ai-app .radio-label:hover {
+    background-color: var(--background-color);
+}
+
+#louis-ai-app .form-group .radio-label + .radio-label,
+#louis-ai-app .form-group .checkbox-label + .checkbox-label {
+    margin-top: 0.75rem;
+}
+
+#louis-ai-app .checkbox-label input[type="checkbox"],
+#louis-ai-app .radio-label input[type="radio"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background-color: var(--content-bg);
+    margin: 0;
+    font: inherit;
+    color: var(--primary-color);
+    width: 1.25em;
+    height: 1.25em;
+    border: 1px solid var(--input-border);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: inline-grid;
+    place-content: center;
+    flex-shrink: 0;
+}
+
+#louis-ai-app .checkbox-label input[type="checkbox"] {
+    border-radius: 4px;
+}
+#louis-ai-app .radio-label input[type="radio"] {
+    border-radius: 50%;
+}
+
+#louis-ai-app .checkbox-label input[type="checkbox"]::before {
+    content: "";
+    width: 0.7em;
+    height: 0.7em;
+    background-color: white;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+}
+
+#louis-ai-app .radio-label input[type="radio"]::before {
+    content: "";
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background-color: white;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+}
+
+#louis-ai-app .checkbox-label input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#louis-ai-app .radio-label input[type="radio"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+#louis-ai-app .checkbox-label input[type="checkbox"]:checked::before,
+#louis-ai-app .radio-label input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+#louis-ai-app .checkbox-label:hover input[type="checkbox"]:not(:checked) {
+     border-color: var(--secondary-hover-color);
+}
+
+#louis-ai-app .checkbox-label input[type="checkbox"]:focus-visible,
+#louis-ai-app .radio-label input[type="radio"]:focus-visible {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--background-color), 0 0 0 4px var(--primary-color);
+}
+
+#louis-ai-app.dark-theme .checkbox-label input[type="checkbox"]:focus-visible,
+#louis-ai-app.dark-theme .radio-label input[type="radio"]:focus-visible {
+    box-shadow: 0 0 0 2px var(--background-color), 0 0 0 4px var(--primary-color);
+}
+
+/* --- OVERRIDE FOR MODALS --- */
+/* This is intentionally more specific to fight against theme overrides. */
+#louis-ai-app .modal-content .checkbox-label,
+#louis-ai-app .modal-content .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: normal;
+    padding: 0; /* Reset padding for modal context */
+    transition: none;
+}
+
+#louis-ai-app .modal-content .radio-label:hover {
+    background-color: transparent; /* Reset hover for modal context */
+}
+
+#louis-ai-app .modal-content .form-group .radio-label + .radio-label,
+#louis-ai-app .modal-content .form-group .checkbox-label + .checkbox-label {
+    margin-top: 1rem;
+}
+
+#louis-ai-app .modal-content .checkbox-label input[type="checkbox"],
+#louis-ai-app .modal-content .radio-label input[type="radio"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background-color: var(--content-bg);
+    margin: 0;
+    font: inherit;
+    color: var(--primary-color);
+    width: 1.25em;
+    height: 1.25em;
+    border: 1px solid var(--input-border);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: inline-grid;
+    place-content: center;
+    flex-shrink: 0;
+}
+
+#louis-ai-app .modal-content .checkbox-label input[type="checkbox"] {
+    border-radius: 4px;
+}
+#louis-ai-app .modal-content .radio-label input[type="radio"] {
+    border-radius: 50%;
+}
+
+#louis-ai-app .modal-content .checkbox-label input[type="checkbox"]::before {
+    content: "";
+    width: 0.7em;
+    height: 0.7em;
+    background-color: white;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+}
+
+#louis-ai-app .modal-content .radio-label input[type="radio"]::before {
+    content: "";
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background-color: white;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+}
+
+#louis-ai-app .modal-content .checkbox-label input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#louis-ai-app .modal-content .radio-label input[type="radio"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+#louis-ai-app .modal-content .checkbox-label input[type="checkbox"]:checked::before,
+#louis-ai-app .modal-content .radio-label input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+#louis-ai-app .modal-content .checkbox-label:hover input[type="checkbox"]:not(:checked) {
+     border-color: var(--secondary-hover-color);
+}
+
+#louis-ai-app .modal-content .checkbox-label input[type="checkbox"]:focus-visible,
+#louis-ai-app .modal-content .radio-label input[type="radio"]:focus-visible {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--background-color), 0 0 0 4px var(--primary-color);
+}
+
+#louis-ai-app.dark-theme .modal-content .checkbox-label input[type="checkbox"]:focus-visible,
+#louis-ai-app.dark-theme .modal-content .radio-label input[type="radio"]:focus-visible {
+    box-shadow: 0 0 0 2px var(--background-color), 0 0 0 4px var(--primary-color);
+}
+
+
+#louis-ai-app .legal-content { max-height: 50vh; overflow-y: auto; border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 4px; margin: 1rem 0; }
+#louis-ai-app .legal-content h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+#louis-ai-app .legal-content h2:not(:first-child) {
+    margin-top: 2rem;
+}
+#louis-ai-app .legal-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+#louis-ai-app .legal-content p,
+#louis-ai-app .legal-content ul {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+#louis-ai-app .legal-content ul {
+    padding-left: 1.5rem;
+}
+#louis-ai-app .legal-content li {
+    margin-bottom: 0.5rem;
+}
+#louis-ai-app .legal-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+#louis-ai-app .legal-content a:hover {
+    color: var(--primary-hover-color);
+}
+
+/* --- NOTIFICATION TOAST --- */
+#louis-ai-app .notification-toast {
+    position: fixed;
+    top: 20px;
+    /* Positioned relative to the main-content area, not the viewport */
+    left: calc(50% + (var(--sidebar-width, 260px) / 2));
+    transform: translateX(-50%);
+    background-color: var(--positive-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    animation: slide-in-down 0.3s ease-out forwards;
+}
+
+#louis-ai-app .sidebar.collapsed ~ .main-content .notification-toast,
+#louis-ai-app .notification-toast {
+     left: calc(50% + (260px / 2));
+}
+
+#louis-ai-app .sidebar.collapsed + .main-content .notification-toast {
+     left: calc(50% + (80px / 2));
+}
+
+
+#louis-ai-app .notification-toast.fade-out {
+    animation: slide-out-up 0.3s ease-in forwards;
+}
+
+@keyframes slide-in-down {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes slide-out-up {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+}
+
+/* --- PRODUCT DESCRIPTION TOOLTIP --- */
+#louis-ai-app .product-description-tooltip {
+    position: fixed;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: normal;
+    z-index: 2000;
+    width: auto;
+    max-width: 350px;
+    text-align: left;
+    pointer-events: none;
+    box-shadow: var(--shadow-md);
+    transform: translate(15px, 15px); /* Offset from cursor */
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+    will-change: opacity;
+}
+
+#louis-ai-app .product-description-tooltip.visible {
+    opacity: 1;
+}
+
+/* --- SPINNER --- */
+#louis-ai-app .spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--primary-color);
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-spin 1s linear infinite;
+    margin: 0 auto;
+}
+@keyframes spinner-spin { to { transform: rotate(360deg); } }
+
+/* --- TOOLTIP --- */
+#louis-ai-app .tooltip-wrapper { position: relative; display: inline-block; }
+#louis-ai-app .tooltip-wrapper[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text) !important;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: normal;
+    z-index: 1000;
+    margin-bottom: 8px;
+    width: max-content;
+    max-width: 250px;
+    text-align: left;
+    pointer-events: none;
+    box-shadow: var(--shadow-md);
+}
+
+/* --- YEAR SELECTOR --- */
+.year-selector {
+    margin-top: 1.5rem;
+}
+.year-selector > label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.year-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* Removed padding, background-color, and border-radius to remove gray box */
+}
+.checkbox-label.small {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+}
+.checkbox-label.small input[type="checkbox"] {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+/* --- EMAIL SIGNATURE CARD --- */
+#louis-ai-app .signatures-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem 0 1.5rem 0;
+}
+
+#louis-ai-app .signature-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+#louis-ai-app .signature-item:hover {
+    background-color: var(--table-header-bg);
+    border-color: var(--primary-color);
+}
+
+#louis-ai-app .sig-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#louis-ai-app .sig-name {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#louis-ai-app .sig-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+#louis-ai-app .signature-editor {
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-top: 1.5rem;
+}
+
+#louis-ai-app .signature-editor h3 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+#louis-ai-app .quill-editor-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+#louis-ai-app .quill-editor-wrapper label {
+    margin-bottom: 0.8rem;
+}
+
+#louis-ai-app .ql-toolbar.ql-snow {
+    border: 1px solid var(--border-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--table-header-bg);
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#louis-ai-app .ql-snow.ql-toolbar .ql-formats {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+#louis-ai-app .ql-container.ql-snow {
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: var(--input-bg);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus state for the wrapper to mimic input focus */
+#louis-ai-app .quill-editor-wrapper:focus-within .ql-toolbar.ql-snow,
+#louis-ai-app .quill-editor-wrapper:focus-within .ql-container.ql-snow {
+    border-color: var(--primary-color);
+}
+
+#louis-ai-app .quill-editor-wrapper:focus-within .ql-toolbar.ql-snow {
+    box-shadow: 0 -2px 0 0 rgba(0, 82, 204, 0.1);
+}
+
+#louis-ai-app .quill-editor-wrapper:focus-within .ql-container.ql-snow {
+    box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.2);
+}
+
+#louis-ai-app .ql-editor {
+    min-height: 180px;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 1.25rem 1rem;
+}
+
+#louis-ai-app .ql-editor.ql-blank::before {
+    color: var(--text-muted);
+    font-style: normal;
+    left: 1rem;
+}
+
+#louis-ai-app .ql-snow.ql-toolbar button:hover,
+#louis-ai-app .ql-snow .ql-toolbar button:hover,
+#louis-ai-app .ql-snow.ql-toolbar button:focus,
+#louis-ai-app .ql-snow .ql-toolbar button:focus,
+#louis-ai-app .ql-snow.ql-toolbar button.ql-active,
+#louis-ai-app .ql-snow .ql-toolbar button.ql-active,
+#louis-ai-app .ql-snow.ql-toolbar .ql-picker-label:hover,
+#louis-ai-app .ql-snow .ql-toolbar .ql-picker-label:hover,
+#louis-ai-app .ql-snow.ql-toolbar .ql-picker-label.ql-active,
+#louis-ai-app .ql-snow .ql-toolbar .ql-picker-label.ql-active {
+    color: var(--primary-color);
+}
+
+#louis-ai-app .ql-snow.ql-toolbar button:hover .ql-stroke,
+#louis-ai-app .ql-snow .ql-toolbar button:hover .ql-stroke,
+#louis-ai-app .ql-snow.ql-toolbar button.ql-active .ql-stroke,
+#louis-ai-app .ql-snow .ql-toolbar button.ql-active .ql-stroke {
+    stroke: var(--primary-color);
+}
+
+#louis-ai-app .ql-snow.ql-toolbar button:hover .ql-fill,
+#louis-ai-app .ql-snow .ql-toolbar button:hover .ql-fill,
+#louis-ai-app .ql-snow.ql-toolbar button.ql-active .ql-fill,
+#louis-ai-app .ql-snow .ql-toolbar button.ql-active .ql-fill {
+    fill: var(--primary-color);
+}
+
+#louis-ai-app .ql-snow .ql-stroke {
+    stroke: var(--text-color);
+    transition: stroke 0.2s;
+}
+
+#louis-ai-app .ql-snow .ql-fill {
+    fill: var(--text-color);
+    transition: fill 0.2s;
+}
+
+#louis-ai-app .ql-snow .ql-picker {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+#louis-ai-app .ql-snow .ql-picker-label {
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    padding-left: 0.8rem;
+    padding-right: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+    outline: none;
+    height: 32px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+#louis-ai-app .ql-snow .ql-picker-label:hover {
+    border-color: var(--primary-color);
+}
+
+#louis-ai-app .ql-snow .ql-picker-label svg {
+    right: 0.4rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 14px !important;
+}
+
+#louis-ai-app .ql-snow .ql-picker-options {
+    background-color: var(--content-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem;
+    z-index: 100;
+}
+
+#louis-ai-app .ql-snow .ql-picker-item {
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    color: var(--text-color);
+    transition: all 0.2s;
+}
+
+#louis-ai-app .ql-snow .ql-picker-item:hover {
+    background-color: var(--table-header-bg);
+    color: var(--primary-color);
+}
+
+#louis-ai-app .ql-snow .ql-picker-item.ql-selected {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Quill Tooltip (e.g. for links) */
+#louis-ai-app .ql-snow .ql-tooltip {
+    background-color: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    box-shadow: var(--shadow-xl) !important;
+    padding: 0.5rem !important;
+    color: var(--text-color) !important;
+    z-index: 1000 !important;
+    display: none;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    width: auto !important;
+    min-width: 250px !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip:not(.ql-hidden) {
+    display: flex !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip.ql-hidden {
+    display: none !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip::before {
+    content: "Link bearbeiten" !important;
+    display: block !important;
+    width: 100% !important;
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 0.1rem !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip.ql-editing {
+    padding: 0.75rem !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip.ql-editing input[type=text] {
+    display: block !important;
+    flex: 1 !important;
+    min-width: 150px !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: 4px !important;
+    padding: 0.4rem 0.6rem !important;
+    background-color: var(--input-bg) !important;
+    color: var(--text-color) !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0 !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-action,
+#louis-ai-app .ql-snow .ql-tooltip .ql-remove {
+    width: 28px !important;
+    height: 28px !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+    font-size: 0 !important; 
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s !important;
+    border: none !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-action {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-action:hover {
+    background-color: var(--primary-hover-color) !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-remove {
+    background-color: var(--danger-color) !important;
+    color: white !important;
+    margin-left: 0 !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-remove:hover {
+    background-color: var(--danger-hover-color) !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-action::before {
+    content: "" !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-remove::before {
+    content: "" !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip .ql-preview {
+    display: block !important;
+    width: 100% !important;
+    color: var(--primary-color) !important;
+    text-decoration: underline !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 0.25rem !important;
+    max-width: 250px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+#louis-ai-app .ql-snow .ql-tooltip input[type=text]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Empty, style handled above */
+/* Empty, style handled above */
+/* Empty, style handled above */
+/* Empty, style handled above */
+
+#louis-ai-app .signature-editor .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: flex-start;
+}
+
+#louis-ai-app .card-header-with-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+#louis-ai-app .card-header-with-actions h2 {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+#louis-ai-app .header-actions {
+    display: flex;
+    gap: 0.5rem;
+}

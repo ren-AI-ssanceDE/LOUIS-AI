@@ -1,0 +1,50 @@
+/**
+ * @license
+ * Copyright 2024 Stefan Tusk Beratung|Coaching|Training, www.ren-ai-ssance.de
+ * All Rights Reserved.
+ */
+
+#louis-ai-app {
+    --chart-bar-color-1: #4C6EF5; /* Indigo 5 */
+    --chart-bar-color-2: #ACB5BD; /* Gray 5 */
+    --chart-bar-color-3: #DEE2E6; /* Gray 3 */
+
+    --chart-line-color-1: #4C6EF5; /* Indigo 5 */
+    --chart-line-color-2: #868E96; /* Gray 6 */
+    --chart-line-color-3: #748FFC; /* Indigo 3 */
+    --chart-line-color-4: #CED4DA; /* Gray 4 */
+    --chart-line-color-5: #364FC7; /* Indigo 7 */
+}
+
+#louis-ai-app.dark-theme {
+    --chart-bar-color-1: #748FFC; /* Indigo 3 */
+    --chart-bar-color-2: #868E96; /* Gray 6 */
+    --chart-bar-color-3: #495057; /* Gray 8 */
+
+    --chart-line-color-1: #748FFC; /* Indigo 3 */
+    --chart-line-color-2: #ADB5BD; /* Gray 5 */
+    --chart-line-color-3: #A5B4FC; /* Indigo 2 */
+    --chart-line-color-4: #868E96; /* Gray 6 */
+    --chart-line-color-5: #5C7CFA; /* Indigo 4 */
+}
+
+#louis-ai-app .chart-wrapper {
+    width: 100%;
+}
+#louis-ai-app .chart-container h4 { margin-bottom: 1rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+#louis-ai-app .chart-tooltip { font-size: 11px; pointer-events: none; }
+#louis-ai-app .chart-tooltip-bg { fill: var(--sidebar-bg); opacity: 0.85; }
+#louis-ai-app .chart-tooltip-text { fill: var(--sidebar-text); font-weight: 500; }
+#louis-ai-app .updating-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}

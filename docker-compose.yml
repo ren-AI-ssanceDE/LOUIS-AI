@@ -1,0 +1,33 @@
+services:
+  app:
+    build: .
+    container_name: louis-ai
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - SEARCH_BASE_URL=http://searxng:8080/
+    restart: always
+    networks:
+      - louisa-net
+    depends_on:
+      - searxng
+
+  searxng:
+    container_name: searxng
+    image: searxng/searxng:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8080/
+    restart: always
+    networks:
+      - louisa-net
+
+networks:
+  louisa-net:
+    driver: bridge

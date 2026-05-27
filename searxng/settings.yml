@@ -1,0 +1,21 @@
+use_default_settings: true
+
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "ein_ganz_geheimer_schlüssel_hier" # Hier einfach irgendwas tippen
+  limiter: false # WICHTIG: Deaktiviert die Sperre für Open WebUI
+  cors_headers:
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Allow-Methods: "GET, OPTIONS"
+    Access-Control-Allow-Headers: "Content-Type"
+
+search:
+  formats:
+    - html
+    - json
+
+enabled_engines:
+  - google
+  - bing
+  - duckduckgo

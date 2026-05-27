@@ -1,0 +1,1224 @@
+{
+  "legal_forms": {
+    "freelance": "Freiberufliche Selbstständigkeit",
+    "sole_proprietorship": "Gewerbe (Einzelunternehmen)",
+    "ug": "UG (haftungsbeschränkt)",
+    "gbr": "GbR",
+    "gmbh": "GmbH"
+  },
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "add": "Hinzufügen",
+    "apply": "Anwenden",
+    "reset": "Zurücksetzen",
+    "loading": "Lade...",
+    "search": "Suchen...",
+    "export": "Exportieren",
+    "import": "Importieren",
+    "restore": "Wiederherstellen",
+    "saved": "Gespeichert",
+    "saving": "Speichere...",
+    "name": "Name",
+    "description": "Beschreibung",
+    "product": "Produkt",
+    "total": "Gesamt",
+    "actions": "Aktionen",
+    "status": "Status",
+    "project": "Projekt",
+    "confirm": "Bestätigen",
+    "ok": "OK",
+    "understood": "Verstanden",
+    "close": "Schließen",
+    "category": "Kategorie",
+    "not_available": "N/V",
+    "other": "Sonstiges",
+    "category_name": "Kategoriename",
+    "year": "Jahr",
+    "apply_to_years_tooltip": "Werte in andere Geschäftsjahre übernehmen",
+    "reset_year_tooltip": "Werte für GJ {{year}} zurücksetzen",
+    "fill_forward_hint": "Wert für alle Folgemonate dieses Geschäftsjahres übernehmen",
+    "edit_item": "Eintrag \"{{name}}\" bearbeiten",
+    "months": [
+      "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", 
+      "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"
+    ],
+    "months_short": "{{count}} M.",
+    "years_short": "{{count}} J."
+  },
+  "privatbedarfsplan": {
+    "title": "Privatbedarfsplan",
+    "category": "Kategorie",
+    "total": "Gesamt",
+    "grand_total": "Gesamtsumme",
+    "fiscal_year": "Geschäftsjahr {{index}} - {{year}}",
+    "add_subitem": "Unterpunkt hinzufügen"
+  },
+  "diff": {
+    "error_no_data": "Fehler: Die KI hat keine validen Daten zurückgegeben.",
+    "n_a": "N/A",
+    "added": "[+] {{item}} hinzugefügt: \"{{name}}\"",
+    "changed": "[~] {{item}} geändert: \"{{name}}\"",
+    "removed": "[-] {{item}} entfernt: \"{{name}}\"",
+    "category_settings": "Stammdaten",
+    "category_products": "Produkte",
+    "category_financing": "Finanzierungen",
+    "category_assets": "Investitionen",
+    "category_sales": "Absatzplan",
+    "category_costs": "Betriebliche Aufwendungen",
+    "category_private": "Privatbedarf",
+    "field_name": "Name",
+    "field_price": "Preis",
+    "field_vat": "USt",
+    "field_material_costs": "Mat.-Kosten",
+    "field_source": "Quelle",
+    "field_amount": "Betrag",
+    "field_interest": "Zins",
+    "field_start_date": "Startdatum",
+    "field_end_date": "Enddatum",
+    "field_purchase_cost": "Kosten",
+    "field_useful_life": "ND",
+    "field_purchase_date": "Kaufdatum",
+    "sales_changed": "[~] Absatz für \"{{name}}\" geändert.",
+    "direct_costs_changed": "Direkte Kosten wurden geändert.",
+    "subitem_added": "[+] Unterpunkt hinzugefügt: \"{{name}}\"",
+    "subitem_renamed": "[~] Unterpunkt umbenannt: \"{{oldName}}\" -> \"{{newName}}\"",
+    "subitem_costs_changed": "[~] Kosten für \"{{name}}\" geändert."
+  },
+  "nebenrechnungen": {
+    "title": "Nebenrechnungen (Cash-Flow Details)",
+    "additional_info": "Zusätzliche Informationen",
+    "total": "Gesamt",
+    "cash_flow_pre_tax": "Cash-Flow (vor Steuern)",
+    "repayment": "Tilgung Fremdkapital",
+    "capital_service": "Kapitaldienstleistungen (Tilgung + Zinsen)",
+    "private_withdrawal": "Privatentnahme",
+    "fiscal_year": "Geschäftsjahr {{index}} - {{year}}"
+  },
+  "apply_to_years": {
+    "title": "Daten übernehmen",
+    "hint": "Wählen Sie die Geschäftsjahre aus, in die die Daten übernommen werden sollen.",
+    "confirm_button": "Übernehmen",
+    "select_all": "Alle auswählen",
+    "deselect_all": "Alle abwählen",
+    "success_message": "Daten erfolgreich übernommen.",
+    "fiscal_year": "Geschäftsjahr",
+    "fiscal_year_short": "GJ"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "design_legal": "Design & Rechtliches",
+    "language_selection": "Sprachauswahl",
+    "theme": "Erscheinungsbild",
+    "languages": {
+      "de": "Deutsch",
+      "en": "English"
+    },
+    "themes": {
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "disclaimer_title": "Haftungsausschluss",
+    "disclaimer_text": "Die von dieser Anwendung generierten Daten dienen ausschließlich zu Simulationszwecken und stellen keine Anlage-, Rechts- oder Steuerberatung dar. Trotz sorgfältiger Berechnung übernimmt der Entwickler keine Haftung für die Richtigkeit, Vollständigkeit oder Aktualität der Ergebnisse. Unternehmertum ist immer mit Risiken verbunden; bitte konsultieren Sie für geschäftskritische Entscheidungen qualifizierte Fachberater.",
+    "smtp": {
+      "title": "E-Mail (SMTP) Einstellungen",
+      "hint": "Konfigurieren Sie Ihren SMTP-Server, um Projektdaten direkt aus der App zu versenden.",
+      "host": "SMTP Host",
+      "port": "SMTP Port",
+      "secure": "Sichere Verbindung (SSL/TLS)",
+      "username": "Benutzername",
+      "password": "Passwort",
+      "from": "Absender-E-Mail (From)",
+      "placeholder_host": "z.B. smtp.gmail.com",
+      "placeholder_from": "absender@beispiel.de",
+      "test_button": "SMTP-Verbindung testen",
+      "test_loading": "Test-E-Mail wird versendet...",
+      "test_success": "Test erfolgreich! Die E-Mail wurde versendet.",
+      "test_error": "Fehler beim Test: {{message}}"
+    },
+    "ai_parameters": {
+      "title": "KI-Modell Parameter & Schnittstellen",
+      "hint": "Die KI-Funktionalität kann lokal via Ollama oder über externe Cloud-Anbieter (Gemini, OpenAI, Claude) genutzt werden. API-Keys werden ausschließlich lokal gespeichert.",
+      "provider_section": "1. Provider & Verbindung",
+      "provider_title": "KI-Provider & Schnittstellen",
+      "provider_label": "Aktiver KI-Anbieter",
+      "provider_ollama": "Ollama (Lokal / Intranet)",
+      "provider_gemini": "Google Gemini (Extern)",
+      "provider_openai": "OpenAI (Extern)",
+      "provider_claude": "Anthropic Claude (Extern)",
+      "provider_brave": "Brave Search (Proxy/No-Key)",
+      "provider_google_scraper": "Google Search (Scraper/Instabil)",
+      "search_provider_ddg_label": "DuckDuckGo (Proxy/Keine Keys)",
+      "search_provider_searxng_label": "SearXNG (Selbstgehostet)",
+      "search_provider_ddg_hint": "Nutzt den DuckDuckGo HTML Proxy. Keine API-Keys nötig.",
+      "search_provider_brave_hint": "Nutzt Brave Search (HTML Scraper). Gute Ergebnisse, keine Keys nötig.",
+      "search_provider_google_hint": "Direktes Google-Scraping. Kann instabil sein (Bot-Schutz).",
+      "region_global": "Weltweit (Global)",
+      "region_de": "Deutschland",
+      "region_us": "USA / Englisch",
+      "region_gb": "Großbritannien",
+      "region_fr": "Frankreich",
+      "region_es": "Spanien",
+      "region_it": "Italien",
+      "apikey_label": "API Schlüssel für {{provider}}",
+      "apikey_placeholder": "Ihr API-Key...",
+      "apikey_hint": "Dieser Schlüssel wird ausschließlich lokal in dieser App gespeichert und nur für direkte API-Aufrufe an den Anbieter verwendet.",
+      "openai_key_hint": "Dieser Schlüssel wird ausschließlich lokal gespeichert. Für vLLM oder lokale APIs (ohne Key) können Sie hier 'vllm' oder einen beliebigen Text eingeben.",
+      "openai_base_url": "OpenAI / vLLM API Base URL",
+      "openai_base_url_hint": "Die Basis-URL Ihrer vLLM-Instanz oder eines anderen OpenAI-kompatiblen Dienstes (z.B. LM Studio). Leer lassen für Standard OpenAI.",
+      "model_section": "2. Modell-Auswahl",
+      "model_settings_title": "Modell-Konfiguration",
+      "model": "Modell",
+      "placeholder_model": "Modell wählen oder eingeben...",
+      "other_params_section": "3. Antwort-Parameter",
+      "temperature": "Temperatur",
+      "top_k": "Top-K",
+      "top_p": "Top-P",
+      "context_window": "Context Window (num_ctx)",
+      "max_prediction": "Max Prediction (num_predict)",
+      "max_tokens": "Max Tokens (Antwort)",
+      "search_section": "4. Web-Suche (optional)",
+      "ollama_url": "Ollama API URL",
+      "placeholder_ollama_url": "z.B. http://localhost:11434",
+      "test_connection": "Testen",
+      "ollama_hint": "Die Basis-URL Ihrer lokalen Ollama-Instanz.",
+      "ollama_port_hint": "Hinweis: Falls diese App Port 3000 belegt, den Sie für OpenWebUI benötigen, ändern Sie den Port in server.ts.",
+      "search_enabled": "Websuche aktivieren",
+      "search_provider": "Suchanbieter",
+      "search_url": "Such-URL / API (SearXNG)",
+      "placeholder_search_url": "z.B. https://searx.be",
+      "search_hint": "DuckDuckGo ist voreingestellt. Brave und Google sind ebenfalls nativ integriert (via internem Proxy/Scraper).",
+      "safe_search": "SafeSearch",
+      "safe_search_off": "Aus (Keine Einschränkung)",
+      "safe_search_moderate": "Moderat",
+      "safe_search_strict": "Strikt",
+      "region_language": "Region / Sprache",
+      "region_global": "Weltweit (Global)",
+      "reset_params": "Standardwerte wiederherstellen",
+      "export_settings": "KI-Einstellungen exportieren",
+      "import_settings": "KI-Einstellungen importieren",
+      "test_ollama_loading": "Ollama Verbindung wird getestet...",
+      "test_ollama_success": "Verbindung zu Ollama erfolgreich!",
+      "test_ollama_error": "Verbindung fehlgeschlagen: {{message}}. Prüfen Sie OLLAMA_ORIGINS=\"*\" und ob Ollama läuft.",
+      "test_openai_loading": "OpenAI/vLLM Verbindung wird getestet...",
+      "test_openai_success": "Verbindung zu OpenAI/vLLM erfolgreich!",
+      "test_openai_error": "Verbindung fehlgeschlagen: {{message}}.",
+      "test_search_loading": "Suchverbindung wird getestet...",
+      "test_search_success": "Verbindung erfolgreich!",
+      "test_search_error": "Verbindung fehlgeschlagen: {{message}}. Dies liegt meist an 'Mixed Content' oder SearXNG ist nicht erreichbar."
+    },
+    "ai_persona": {
+      "title": "KI-Persona",
+      "manage_title": "Persona auswählen & verwalten",
+      "manage_hint": "Neue Persona erstellen, eine auswählen und die ausgewählte Persona bearbeiten, exportieren oder löschen.",
+      "new_tooltip": "Neue Persona erstellen",
+      "edit_tooltip": "Ausgewählte Persona bearbeiten",
+      "export_tooltip": "Ausgewählte Persona exportieren",
+      "delete_tooltip": "Ausgewählte individuelle Persona löschen",
+      "import_tooltip": "Persona importieren",
+      "premade_personas": "Premade Personas",
+      "custom_personas": "Individuelle Personas",
+      "limit_reached": "Limit erreicht",
+      "limit_message": "Sie haben bereits die maximale Anzahl von 5 individuellen Personas erreicht.",
+      "import_success": "Import erfolgreich",
+      "format_error": "Die JSON-Datei hat nicht das erwartete Format einer Persona (benötigt: name, prompt).",
+      "import_failed": "Persona-Import fehlgeschlagen",
+      "import_failed_details": "Code 404 - Die Datei ist beschädigt oder hat ein falsches Format. Details: {{message}}",
+      "editor": {
+        "title_new": "Neue Persona erstellen",
+        "title_edit": "Persona bearbeiten",
+        "name_label": "Name",
+        "prompt_label": "System-Prompt (HTML erlaubt)",
+        "validation_error_title": "Eingabe unvollständig",
+        "validation_error_message": "Bitte füllen Sie alle Felder aus."
+      },
+      "delete_modal": {
+        "title": "Persona löschen",
+        "confirm_text": "Möchten Sie die Persona \"{{name}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+      },
+      "premade_error": {
+        "title": "Aktion nicht möglich",
+        "message": "Vorgefertigte Personas können nicht bearbeitet, gelöscht oder exportiert werden."
+      }
+    },
+    "ai_prompt": {
+      "title": "KI-Anweisungen (System Prompts)",
+      "manage_title": "System-Prompts verwalten",
+      "manage_hint": "Legt fest, wie der Assistent antwortet und welche finanziellen Regeln er befolgt.",
+      "new_tooltip": "Neuen Prompt erstellen",
+      "edit_tooltip": "Ausgewählten Prompt bearbeiten",
+      "export_tooltip": "Ausgewählten Prompt exportieren",
+      "delete_tooltip": "Ausgewählten individuellen Prompt löschen",
+      "import_tooltip": "Prompt importieren",
+      "limit_reached": "Limit erreicht",
+      "limit_message": "Sie haben bereits die maximale Anzahl von 25 individuellen Prompts erreicht.",
+      "import_success": "Import erfolgreich",
+      "format_error": "Die JSON-Datei hat nicht das erwartete Format eines Prompts (benötigt: name, description, prompt).",
+      "import_failed": "Prompt-Import fehlgeschlagen",
+      "import_failed_details": "Code 404 - Die Datei ist beschädigt oder hat ein falsches Format. Details: {{message}}",
+      "premade_prompts": "Vordefinierte Prompts",
+      "own_prompts": "Eigene Prompts",
+      "editor": {
+        "title_new": "Neuen Prompt erstellen",
+        "title_edit": "Prompt bearbeiten",
+        "name_label": "Name",
+        "description_label": "Beschreibung (Zweck)",
+        "prompt_label": "Inhalt (Anweisungen)",
+        "validation_error_title": "Eingabe unvollständig",
+        "validation_error_message": "Bitte füllen Sie alle Felder aus."
+      },
+      "delete_modal": {
+        "title": "Prompt löschen",
+        "confirm_text": "Möchten Sie den Prompt \"{{name}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+      },
+      "premade_error": {
+        "title": "Aktion nicht möglich",
+        "message": "Vordefinierte Prompts können nicht bearbeitet, gelöscht oder exportiert werden."
+      }
+    },
+    "signatures": {
+      "title": "E-Mail Signaturen",
+      "hint": "Erstellen und verwalten Sie Signaturen, die Sie beim E-Mail-Versand auswählen können.",
+      "export": "Signaturen exportieren (Backup)",
+      "import": "Signaturen importieren",
+      "import_success": "Signaturen erfolgreich importiert.",
+      "invalid_format": "Ungültiges Format. Die Datei muss eine Liste von Signaturen sein.",
+      "import_failed": "Import fehlgeschlagen",
+      "no_signatures": "Noch keine Signaturen angelegt.",
+      "add_new": "Neue Signatur hinzufügen",
+      "add_title": "Neue Signatur",
+      "edit_title": "Signatur bearbeiten",
+      "label_name": "Bezeichnung (z.B. Standard)",
+      "label_content": "Inhalt der Signatur",
+      "placeholder_name": "Name der Signatur...",
+      "placeholder_content": "Mit freundlichen Grüßen,\nMax Mustermann"
+    },
+    "templates": {
+      "title": "E-Mail Vorlagen",
+      "hint": "Erstellen und verwalten Sie E-Mail-Vorlagen (Betreff & Inhalt) für Ihren Projekt-Export.",
+      "export": "Vorlagen exportieren (Backup)",
+      "import": "Vorlagen importieren",
+      "import_success": "Vorlagen erfolgreich importiert.",
+      "invalid_format": "Ungültiges Format. Die Datei muss eine Liste von Vorlagen sein.",
+      "import_failed": "Import fehlgeschlagen",
+      "no_templates": "Noch keine Vorlagen angelegt.",
+      "add_new": "Neue Vorlage hinzufügen",
+      "add_title": "Neue Vorlage",
+      "edit_title": "Vorlage bearbeiten",
+      "label_name": "Bezeichnung (z.B. Interesente)",
+      "label_subject": "Betreff der E-Mail",
+      "label_body": "Inhalt der E-Mail",
+      "placeholder_name": "Name der Vorlage...",
+      "placeholder_subject": "Betreff...",
+      "placeholder_body": "Hier den Text der Vorlage eingeben..."
+    }
+  },
+  "ai_assistant": {
+    "toggle_tooltip": "Louis AI öffnen",
+    "disabled_tooltip": "KI-Funktion nicht verfügbar",
+    "toggle_label": "KI",
+    "top": "LOUIS VISION",
+    "knowledge_base": {
+      "empty": "Keine Dokumente in der Wissensdatenbank gefunden."
+    },
+    "header": {
+      "title": "Louis Vision",
+      "load_placeholder": "Gespeicherten Chat laden...",
+      "load_tooltip": "Ausgewählten Chat laden",
+      "refresh_tooltip": "Langzeitgedächtnis aktualisieren",
+      "reset_tooltip": "Chat zurücksetzen"
+    },
+    "usage": {
+      "total": "{{count}} Tokens insgesamt",
+      "details": "(Prompt: {{prompt}} • Antwort: {{completion}})"
+    },
+    "input": {
+      "placeholder": "Frage stellen... (Umschalt+Eingabe für Zeilenumbruch)",
+      "attach_tooltip": "PDF anhängen",
+      "send_tooltip": "Senden",
+      "stop_tooltip": "Abbrechen",
+      "save_tooltip": {
+        "unsaved": "Aktuellen Chatverlauf speichern",
+        "saved": "Chat ist bereits gespeichert",
+        "empty": "Chat ist leer"
+      },
+      "web_search_tooltip": {
+        "forced": "Websuche ist für die nächste Anfrage ERZWUNGEN",
+        "auto": "Websuche erfolgt automatisch bei Bedarf"
+      },
+      "local_knowledge_tooltip": {
+        "forced": "Wissensdatenbank-Suche ist für die nächste Anfrage ERZWUNGEN",
+        "auto": "Wissenssuche erfolgt automatisch bei Bedarf"
+      },
+      "prompts_tooltip": "Gespeicherte Prompts verwenden",
+      "prompts_placeholder": "Prompt auswählen...",
+      "resize_tooltip": "Eingabefeld skalieren"
+    },
+    "body": {
+      "welcome": "Willkommen beim Louis AI Assistenten! Wie kann ich Ihnen heute helfen?",
+      "instruction_1": "Geben Sie Anweisungen, um Ihren Plan zu ändern (z.B. \"Erhöhe die Miete ab nächstem Jahr um 5%\").",
+      "instruction_2": "Stellen Sie analytische Fragen (z.B. \"Führe eine SWOT-Analyse durch.\").",
+      "suggestions": "Vorschläge:",
+      "thought_title": "LOUIS Vision Strategie-Analyse",
+      "continue": "Hier weitermachen",
+      "thought_summary": "Gedankengang anzeigen",
+      "sources": "Quellen:",
+      "proposal": {
+        "title": "Änderungsvorschlag:",
+        "preview_title": "Vorschau des neuen Projekts:",
+        "project_name": "Projektname:",
+        "company_name": "Unternehmen:",
+        "foundation_date": "Gründung:",
+        "legal_form": "Rechtsform:",
+        "planning_years": "Planungsjahre:",
+        "confirm_text": "Möchten Sie wirklich ein neues, leeres Projekt erstellen? Nicht gespeicherte Änderungen gehen dabei verloren.",
+        "confirm": "Ja, Änderungen übernehmen",
+        "create_project": "Ja, Projekt erstellen",
+        "create_empty": "Ja, leeres Projekt erstellen"
+      },
+      "review": {
+        "title": "🔍 Daten-Review",
+        "description": "Bitte prüfen Sie die extrahierten Daten vor der Speicherung.",
+        "tabs": {
+          "settings": "Stammdaten",
+          "products": "Produkte",
+          "costs": "Kosten",
+          "private": "Privat",
+          "financing": "Finanzierung",
+          "assets": "Investitionen"
+        },
+        "form": {
+          "company_name": "Unternehmensname",
+          "legal_form": "Rechtsform",
+          "tax_rate": "Steuersatz (%)",
+          "amount_standard": "Betrag (Standard/Monat)"
+        },
+        "table": {
+          "name": "Name",
+          "price": "Preis",
+          "var_costs": "Var. Kosten",
+          "category": "Kategorie",
+          "amount_month": "Betrag/Monat",
+          "source": "Quelle",
+          "amount": "Betrag",
+          "interest": "Zins %",
+          "investment": "Investition",
+          "purchase_cost": "Anschaffungskosten",
+          "useful_life": "ND (Jahre)"
+        },
+        "empty": {
+          "costs": "Keine Betriebskosten extrahiert",
+          "products": "Keine Produkte",
+          "private": "Keine Privatbedarfe",
+          "financing": "Keine Finanzierungen",
+          "assets": "Keine Investitionen"
+        },
+        "actions": {
+          "confirm": "Daten übernehmen & berechnen"
+        }
+      },
+      "kb": {
+        "save_permanent": "Dauerhaft Speichern",
+        "use_for_chat": "Nur für diesen Chat nutzen"
+      },
+      "feedback": {
+        "positive_tooltip": "Gute Antwort (Daumen hoch)",
+        "negative_tooltip": "Schlechte Antwort (Daumen runter)",
+        "reason_placeholder": "Begründung für die Bewertung (hilft beim Training)..."
+      },
+      "training": {
+        "export_tooltip_with_feedback": "Bewertete Chats exportieren",
+        "export_tooltip_no_feedback": "Bewerte Antworten um Trainingsdaten zu sammeln",
+        "export_button": "Trainingsdaten exportieren ({{count}})"
+      }
+    },
+    "quick_actions": {
+      "general": {
+        "investor_summary": {
+          "label": "Zusammenfassung für Investoren",
+          "prompt": "Fasse die wichtigsten Kennzahlen und das Geschäftsmodell in einer Form zusammen, die für einen Investor geeignet ist."
+        },
+        "swot": {
+          "label": "SWOT-Analyse durchführen",
+          "prompt": "Führe eine SWOT-Analyse (Stärken, Schwächen, Chancen, Risiken) für meinen aktuellen Finanzplan durch."
+        },
+        "marketing": {
+          "label": "Marketing-Ideen vorschlagen",
+          "prompt": "Gib mir drei kreative Marketing-Ideen, die zu meinem Geschäftsmodell passen könnten."
+        },
+        "risks": {
+          "label": "Risiken analysieren",
+          "prompt": "Analysiere die größten finanziellen Risiken in meinem aktuellen Plan. Konzentriere dich auf Aspekte wie Liquiditätsengpässe, hohe Fixkosten oder unrealistische Absatzpläne."
+        },
+        "profitability": {
+          "label": "Profitabilität verbessern",
+          "prompt": "Schlage mir drei konkrete, umsetzbare Maßnahmen vor, um die Profitabilität zu verbessern, inklusive einer kurzen Begründung."
+        },
+        "cost_reduction": {
+          "label": "Wo siehst du Potenzial zur Kostensenkung?",
+          "prompt": "Wo siehst du das größte Potenzial zur Kostensenkung in meinem Plan? Gib mir 3 konkrete Vorschläge mit Begründung."
+        }
+      },
+      "grundeinstellungen": {
+        "check_data": {
+          "label": "Stammdaten prüfen",
+          "prompt": "Überprüfe meine Stammdaten auf Vollständigkeit und gib mir Verbesserungsvorschläge."
+        },
+        "rename": {
+          "label": "Projekt umbenennen",
+          "prompt": "Benenne mein Projekt in 'Wachstumsplan 2025' um. Gib nur das geänderte Datenobjekt zurück."
+        }
+      },
+      "privatbedarf": {
+        "analyze": {
+          "label": "Privatbedarf analysieren",
+          "prompt": "Analysiere meinen Privatbedarf. Wo sehe ich die größten monatlichen Ausgaben und wie entwickeln sie sich über die Jahre?"
+        },
+        "inflation": {
+          "label": "Inflationsanpassung durchführen",
+          "prompt": "Erhöhe alle meine privaten Ausgaben um 3% ab dem nächsten Geschäftsjahr, um die Inflation zu berücksichtigen. Gib nur das geänderte Datenobjekt zurück."
+        }
+      },
+      "finanzierungsplan": {
+        "equity_vs_debt": {
+          "label": "Eigen- vs. Fremdkapital",
+          "prompt": "Vergleiche die Vor- und Nachteile von Eigenkapital vs. Fremdkapital für mein aktuelles Projekt."
+        },
+        "new_loan": {
+          "label": "Neuen Kredit hinzufügen",
+          "prompt": "Füge einen neuen KfW-Kredit über 50.000€ mit 4.5% Zinsen und einer Laufzeit von 5 Jahren hinzu. Startdatum ist der Beginn des nächsten Monats. Gib nur das geänderte Datenobjekt zurück."
+        },
+        "check_funding": {
+          "label": "Kapitalbedarf prüfen",
+          "prompt": "Prüfe, ob meine aktuelle Finanzierung ausreicht, um die geplanten Investitionen und Anlaufkosten zu decken."
+        }
+      },
+      "abschreibungsplan": {
+        "explain_afa": {
+          "label": "Was bedeutet \"AfA\"?",
+          "prompt": "Erkläre mir, was \"AfA\" bedeutet und warum es für meine Finanzplanung wichtig ist."
+        },
+        "new_car": {
+          "label": "Neuen Firmenwagen hinzufügen",
+          "prompt": "Füge einen neuen Firmenwagen für 40.000€ mit einer Nutzungsdauer von 6 Jahren hinzu. Das Kaufdatum ist heute. Gib nur das geänderte Datenobjekt zurück."
+        }
+      },
+      "produktPreiskalkulation": {
+        "analyze_margins": {
+          "label": "Margen analysieren",
+          "prompt": "Analysiere meine Produktpreise. Welches Produkt hat die höchste Marge und welches die niedrigste?"
+        },
+        "increase_prices": {
+          "label": "Preise um 5% erhöhen",
+          "prompt": "Erhöhe die Preise aller meiner Produkte und Dienstleistungen um 5%. Gib nur das geänderte Datenobjekt zurück."
+        }
+      },
+      "absatzplan": {
+        "worst_case": {
+          "label": "Pessimistisches Szenario erstellen",
+          "prompt": "Erstelle ein pessimistisches Szenario: Reduziere den Absatz für alle Produkte um 15% für den gesamten Planungszeitraum. Gib nur das geänderte Datenobjekt zurück."
+        },
+        "top_product": {
+          "label": "Umsatzstärkstes Produkt finden",
+          "prompt": "Welches Produkt wird voraussichtlich im letzten Planungsjahr den meisten Umsatz generieren? Zeige mir die Berechnung."
+        }
+      },
+      "ertragsplan": {
+        "top_costs": {
+          "label": "Top 3 Kostenblöcke",
+          "prompt": "Identifiziere meine Top 3 Kostenblöcke im Ertragsplan für das erste Geschäftsjahr."
+        },
+        "break_even": {
+          "label": "Break-Even-Analyse",
+          "prompt": "Wann erreiche ich voraussichtlich den Break-Even-Point? Erkläre das Ergebnis."
+        }
+      },
+      "liquiditaetsplan": {
+        "bottlenecks": {
+          "label": "Liquiditätsengpässe finden",
+          "prompt": "Analysiere meinen Liquiditätsplan. Gibt es Monate, in denen ein Engpass droht? Wenn ja, wann und wie hoch ist die Lücke?"
+        },
+        "profit_vs_liquidity": {
+          "label": "Gewinn vs. Liquidität",
+          "prompt": "Erkläre mir den Unterschied zwischen Gewinn und Liquidität anhand meiner Plandaten."
+        }
+      },
+      "uebersicht": {
+        "roi": {
+          "label": "ROI berechnen",
+          "prompt": "Was ist mein Return on Investment (ROI) am Ende des Planungszeitraums und wie wird er berechnet?"
+        },
+        "payback": {
+          "label": "Amortisationszeitpunkt finden",
+          "prompt": "Wann hat sich meine Anfangsinvestition amortisiert? Gib mir den genauen Monat an."
+        }
+      },
+      "einstellungen": {
+        "persona": {
+          "label": "Was ist eine KI-Persona?",
+          "prompt": "Erkläre mir, was eine KI-Persona ist und wie sie meine Interaktion mit dir beeinflusst."
+        },
+        "ai_modes": {
+          "label": "Unterschied der KI-Modi",
+          "prompt": "Was ist der Unterschied zwischen dem Qualitätsmodus und der Websuche? Wann sollte ich welchen Modus verwenden?"
+        }
+      }
+    }
+  },
+  "modals": {
+    "print": {
+      "title": "Druckoptionen",
+      "description": "Wählen Sie die Pläne aus, die Sie drucken möchten.",
+      "groups": {
+        "general": "Allgemein & Pläne",
+        "analysis": "Auswertungen & Statistiken"
+      },
+      "sections": {
+        "deckblatt": "Deckblatt & Stammdaten",
+        "privatbedarf": "Privatbedarfsplan",
+        "finanzierungsplan": "Finanzierungsplan",
+        "abschreibungsplan": "Abschreibungsplan (AfA)",
+        "umsatzkalkulation": "Umsatzkalkulation",
+        "absatzplan": "Absatzplan",
+        "ertragsplan": "Ertragsplan (GuV)",
+        "liquiditaetsplan": "Liquiditätsplan",
+        "jahresuebersichten": "Jahresübersichten",
+        "banken": "Statistik für Banken",
+        "investoren": "Statistik für Investoren",
+        "foerdergeber": "Statistik für Fördergeldgeber",
+        "szenariovergleich": "Szenariovergleich"
+      },
+      "print_button": "Drucken",
+      "select_all": "Alle auswählen",
+      "deselect_all": "Alle abwählen"
+    },
+    "email": {
+      "title": "Projekt per E-Mail senden",
+      "to": "Empfänger (An)",
+      "cc": "Kopie (CC)",
+      "bcc": "Blindkopie (Bcc)",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "placeholder_message": "Schreiben Sie Ihre Nachricht hier...",
+      "attachments_title": "Anhänge",
+      "attachment_json": "Projekt (.json)",
+      "attachment_pdf": "Druckversion (.pdf)",
+      "upload_files": "Lokale Dateien laden",
+      "rag_docs_title": "Aus Wissensdatenbank (RAG)",
+      "rag_loading": "Lade Dokumente...",
+      "rag_empty": "Keine Dokumente gefunden.",
+      "hint": "Wählen Sie die gewünschten Anhänge aus.",
+      "send_button": "E-Mail senden",
+      "sending_button": "Wird gesendet...",
+      "template_select": "Vorlage auswählen",
+      "no_template": "-- Individueller Text / Standard --",
+      "signature_select": "Signatur einfügen",
+      "no_signature": "-- Keine Signatur --",
+      "placeholder_to": "empfaenger@beispiel.de",
+      "default_subject": "Projekt-Export: {{projectName}}",
+      "default_body": "Hallo,\n\nanbei erhalten Sie den Export des Projekts \"{{projectName}}\".\n\nBeste Grüße",
+      "smtp_error": "Bitte konfigurieren Sie zuerst die SMTP-Einstellungen in den Einstellungen.",
+      "success": "E-Mail erfolgreich versendet",
+      "success_partial": "E-Mail wurde versendet, aber einige Empfänger wurden abgelehnt: {{rejected}}",
+      "error": "Fehler beim Senden: {{message}}",
+      "error_server_html": "Der Server hat mit HTML geantwortet statt mit JSON. Das deutet auf einen Absturz oder eine falsche Route hin."
+    },
+    "delete_project": {
+      "title": "Projekt löschen",
+      "confirm": "Möchten Sie das Projekt \"{{projectName}}\" wirklich endgültig löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "confirm_button": "Löschen bestätigen"
+    },
+    "reset_project": {
+      "title": "Projekt zurücksetzen",
+      "confirm": "Möchten Sie das Projekt \"{{projectName}}\" wirklich zurücksetzen? Alle Plandaten werden auf die Standardwerte zurückgesetzt. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "confirm_button": "Ja, zurücksetzen"
+    },
+    "cannot_delete_last": {
+      "title": "Aktion nicht möglich",
+      "text": "Das letzte verbleibende Projekt kann nicht gelöscht werden."
+    },
+    "import_conflict": {
+      "title": "Importkonflikt",
+      "text": "Ein Projekt mit dem Namen \"{{projectName}}\" existiert bereits.",
+      "existing": "Bestehendes Projekt:",
+      "imported": "Importiertes Projekt:",
+      "created_at": "Erstellt am {{date}}",
+      "unknown": "Unbekannt",
+      "question": "Was möchten Sie tun?",
+      "overwrite": "Bestehendes Projekt mit Import überschreiben",
+      "copy": "Als Kopie importieren"
+    },
+    "overwrite_confirm": {
+      "title": "Überschreiben bestätigen",
+      "text": "Sind Sie absolut sicher, dass Sie das Projekt \"{{projectName}}\" mit den Daten aus der Importdatei überschreiben wollen? Alle aktuellen Daten dieses Projekts gehen verloren.",
+      "confirm_button": "Ja, überschreiben"
+    },
+    "asset": {
+      "title_edit": "Investitionsgut bearbeiten",
+      "title_new": "Neues Investitionsgut hinzufügen",
+      "label_name": "Name des Investitionsguts",
+      "label_description": "Beschreibung (für Tooltip)",
+      "placeholder_name": "Neues Investitionsgut",
+      "placeholder_description": "Zusätzliche Details zum Investitionsgut...",
+      "alert_name_required": "Bitte geben Sie einen Namen für das Investitionsgut an.",
+      "delete_title": "Investitionsgut löschen",
+      "delete_confirm": "Möchten Sie das Investitionsgut \"{{name}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "subitem": {
+      "title_edit": "Unterpunkt bearbeiten",
+      "title_new": "Neuen Unterpunkt hinzufügen",
+      "label_name": "Name des Unterpunkts",
+      "label_description": "Beschreibung (optional)",
+      "placeholder_name": "z.B. Büromaterial",
+      "placeholder_name_private": "z.B. Netflix-Abo",
+      "placeholder_description": "Zusätzliche Details zum Unterpunkt...",
+      "alert_name_required": "Bitte geben Sie einen Namen für den Unterpunkt ein.",
+      "delete_title": "Unterpunkt löschen",
+      "delete_confirm": "Möchten Sie den Unterpunkt \"{{name}}\" wirklich endgültig aus allen Geschäftsjahren löschen?",
+      "delete_confirm_button": "Löschen bestätigen",
+      "reset_title": "Werte zurücksetzen",
+      "reset_confirm": "Möchten Sie wirklich alle Werte für das Geschäftsjahr {{year}} zurücksetzen? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "active_in_years": "Aktiv in Geschäftsjahren:"
+    },
+    "delete_chat": {
+      "title": "Chat löschen",
+      "confirm": "Möchten Sie diesen Chatverlauf wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "confirm_all": "Möchten Sie wirklich ALLE gespeicherten Chatverläufe für dieses Projekt löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "confirm_button": "Löschen"
+    },
+    "import_chat": {
+      "title": "Import bestätigen",
+      "overwrite_msg": "Die folgenden bereits existierenden Chats werden durch die importierten Versionen überschrieben. Möchten Sie fortfahren?",
+      "new_chats_msg": "{{count}} neue(r) Chat(s) wird/werden ebenfalls hinzugefügt.",
+      "confirm_button": "Überschreiben & Importieren"
+    },
+    "import_confirm": {
+      "title": "Import bestätigen",
+      "text": "Möchten Sie das Projekt \"{{projectName}}\" als neues Projekt hinzufügen?",
+      "confirm_button": "Als neues Projekt importieren"
+    },
+    "unsaved_changes": {
+      "title": "Nicht gespeicherte Änderungen",
+      "switch_text": "Sie haben nicht gespeicherte Änderungen. Möchten Sie trotzdem wechseln und die Änderungen verwerfen?",
+      "switch_button": "Wechseln",
+      "new_project_text": "Sie haben nicht gespeicherte Änderungen. Möchten Sie trotzdem ein neues Projekt erstellen und die Änderungen verwerfen?",
+      "new_project_button": "Neues Projekt erstellen"
+    },
+    "restore": {
+      "title": "Speicherstand wiederherstellen",
+      "confirm": "Möchten Sie wirklich den Speicherstand von {{date}} wiederherstellen? Alle neueren Änderungen gehen verloren.",
+      "confirm_button": "Wiederherstellen"
+    }
+  },
+  "stats": {
+    "fiscal_year_short": "GJ {{index}}",
+    "banken": {
+      "title": "Statistik für Banken",
+      "liquiditaet_chart_title": "Liquiditätsverlauf (kumuliert)",
+      "liquiditaet_label": "Liquidität",
+      "cashflow_vs_kapitaldienst_title": "Verfügbarer Cashflow vs. Kapitaldienst",
+      "available_cashflow_label": "Verfügbarer Cashflow (f. KD)",
+      "debt_service_label": "Kapitaldienst",
+      "break_even_title": "Break-Even-Umsatz pro Jahr",
+      "debt_service_analysis_title": "Kapitaldienst-Analyse",
+      "kpi": {
+        "debt_service_limit": "Kapitaldienstgrenze",
+        "debt_service": "Kapitaldienst",
+        "coverage_ratio": "Deckungsgrad"
+      }
+    },
+    "investoren": {
+      "title": "Statistik für Investoren",
+      "profitability_title": "Rentabilitäts-Kennzahlen (Gesamt)",
+      "funding_structure_title": "Finanzierungsstruktur",
+      "cashflow_overview_title": "Cashflow-Übersicht pro Jahr",
+      "roi_chart_title": "ROI & Umsatzrendite Entwicklung",
+      "roi_label": "ROI (%)",
+      "ros_label": "Umsatzrendite (%)",
+      "kpi": {
+        "equity_ratio": "Eigenkapitalquote",
+        "debt_ratio": "Fremdkapitalquote",
+        "avg_ros": "Durchschn. Umsatzrendite",
+        "final_roi": "Gesamt-ROI",
+        "payback_period": "Amortisationszeit",
+        "years": "Jahre",
+        "years_short": "{{count}} J."
+      }
+    },
+    "foerdergeber": {
+      "title": "Statistik für Fördergeldgeber",
+      "cost_overview_title": "Entwicklung Hauptkostenblöcke",
+      "long_term_finance_title": "Langfristige Finanzübersicht",
+      "cost_blocks": {
+        "personnel": "Personal",
+        "marketing": "Marketing",
+        "facility": "Raumkosten",
+        "other": "Sonstige"
+      },
+      "kpis": {
+        "liquidity_end": "Liquidität Ende GJ"
+      }
+    }
+  },
+  "app": {
+    "title": "LOUIS AI",
+    "logo_title": "LOUIS AI",
+    "no_project_selected": "Kein Projekt ausgewählt",
+    "please_select_project": "Bitte wählen Sie ein Projekt aus oder erstellen Sie ein neues.",
+    "calculating": "Berechnung läuft...",
+    "view_not_found": "Ansicht nicht gefunden",
+    "new_project": "+ Neues Projekt",
+    "delete_last_project_hint": "Das letzte Projekt kann nicht gelöscht werden",
+    "delete_project_hint": "Aktuelles Projekt löschen",
+    "toggle_sidebar_expand": "Menü ausklappen",
+    "toggle_sidebar_collapse": "Menü einklappen",
+    "error_boundary_title": "Hoppla! Da ist etwas schiefgelaufen.",
+    "error_boundary_text": "Die Anwendung konnte diesen Bereich nicht laden.",
+    "reload_app": "App neu laden",
+    "show_details": "Fehlerdetails anzeigen",
+    "export_failed": "Export fehlgeschlagen. Details im Log.",
+    "reset_chat_confirm_title": "Chat zurücksetzen?",
+    "reset_chat_confirm_text": "Möchten Sie den aktuellen Chatverlauf im Fenster wirklich zurücksetzen? Gespeicherte Versionen dieses Chats bleiben erhalten.",
+    "cancel": "Abbrechen",
+    "reset": "Zurücksetzen"
+  },
+  "views": {
+    "uebersicht": "Übersicht",
+    "grundeinstellungen": "Grundeinstellungen",
+    "produkt_preiskalkulation": "Produkt- & Preiskalkulation",
+    "absatzplan": "Absatzplan",
+    "privatbedarf": "Privatbedarf",
+    "finanzierungsplan": "Finanzierungsplan",
+    "ertragsplan": "Ertragsplan",
+    "liquiditaetsplan": "Liquiditätsplan",
+    "abschreibungsplan": "Abschreibungsplan",
+    "einstellungen": "Einstellungen"
+  },
+  "absatzplan": {
+    "title": "Absatzplan (Menge)",
+    "fill_forward_hint": "Wert für alle Folgemonate dieses Geschäftsjahres übernehmen",
+    "reset_year_title": "Werte zurücksetzen",
+    "reset_year_confirm": "Möchten Sie wirklich alle Werte für das Geschäftsjahr {{year}} zurücksetzen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "fiscal_year": "Geschäftsjahr"
+  },
+  "operational_costs": {
+    "ceo_salaries": "Geschäftsführungsgehälter",
+    "personnel": "Personalkosten",
+    "facility_costs": "Raumkosten",
+    "office_costs": "Bürokosten",
+    "vehicle_costs": "Mobilitätskosten",
+    "advertising_costs": "Marketing & Vertriebskosten",
+    "insurance": "Unternehmensversicherungen",
+    "consulting_costs": "Steuer- & Rechtsberatung",
+    "travel_costs": "Reisekosten",
+    "other_expenses": "sonstige Kosten"
+  },
+  "liquiditaet": {
+    "title": "Liquiditätsplan",
+    "position": "Position",
+    "running_incomes": "Laufende Einzahlungen",
+    "revenue_net": "Umsatz (netto)",
+    "vat_sales": "Umsatzsteuer (aus Verkäufen)",
+    "sum_running_incomes": "Summe laufende Einzahlungen",
+    "running_expenses": "Laufende Auszahlungen",
+    "cogs_net": "- Bezogene Leistungen & Waren (netto)",
+    "net": "netto",
+    "interest_payments": "- Zinszahlungen",
+    "vat_purchases": "- Vorsteuer (aus Einkäufen)",
+    "vat_payment_to_tax_office": "- USt.-Zahllast (an Finanzamt)",
+    "sum_running_expenses": "Summe laufende Auszahlungen",
+    "invest_finance_activity": "Investitions- & Finanzierungstätigkeit",
+    "equity_inflow": "Einzahlungen Eigenmittel",
+    "loan_inflow": "Einzahlungen Fremdmittel (Darlehen)",
+    "invest_outflow": "- Auszahlungen für Investitionen",
+    "repayment_outflow": "- Tilgung (von Darlehen)",
+    "private_withdrawal": "- Privatentnahme",
+    "saldo_running": "Saldo lfd. Liquidität",
+    "kumulierte_liquiditaet": "Kumulierte Liquidität"
+  },
+  "grundeinstellungen": {
+    "stammdaten": "Stammdaten",
+    "project_name": "Projektname",
+    "company_name": "Name des Unternehmens",
+    "legal_form": "Rechtsform",
+    "foundation_date": "Gründungsdatum",
+    "planning_years": "Planungsjahre",
+    "planning_years_hint": "Anzahl der Geschäftsjahre (mind. 3, max. {{max}}).",
+    "tax_rate": "Durchschn. Ertragsteuersatz (%)",
+    "tax_rate_hint": "Erwarteter Durchschnittssteuersatz auf den Gewinn (Einkommen- und ggf. Gewerbesteuer ODER Körperschaft- und Gewerbesteuer).",
+    "vat_deductible": "Vorsteuerabzugsberechtigt",
+    "vat_deductible_hint": "Nur aktivieren, wenn das Unternehmen die Vorsteuer auf Einkäufe vom Finanzamt zurückerhält (Standard bei Regelbesteuerung).",
+    "print_title": "Drucken",
+    "print_text": "Drucken Sie die Pläne für Ihre Unterlagen. Sie können im nächsten Schritt auswählen, welche Pläne gedruckt werden sollen.",
+    "print_button": "Druckoptionen öffnen",
+    "share_title": "Projekt teilen",
+    "share_text": "Senden Sie den aktuellen Stand Ihres Projekts per E-Mail an sich selbst oder an Partner.",
+    "share_button": "Per E-Mail senden",
+    "share_hint": "Hinweis: Die E-Mail wird über Ihren konfigurierten SMTP-Server versendet.",
+    "reset_title": "Projekt zurücksetzen",
+    "reset_text": "Setzt alle Daten des aktuellen Projekts auf die Standardwerte zurück. Diese Aktion kann nicht rückgängig gemacht werden.",
+    "reset_button": "Projekt jetzt zurücksetzen",
+    "project_without_name": "Projekt ohne Namen"
+  },
+  "ertragsplan": {
+    "title": "Ertragsplan (GuV)",
+    "position": "Position",
+    "revenue": "Umsatzerlöse",
+    "variable_costs": "- Material-/Wareneinsatz",
+    "cogs": "Wareneinsatz",
+    "gross_profit": "= Rohertrag",
+    "operational_costs_header": "Betriebliche Aufwendungen",
+    "sum_operational_costs": "= Summe betr. Aufwendungen",
+    "depreciation": "- Abschreibungen",
+    "ebit": "= Betriebsergebnis (EBIT)",
+    "ebit_short": "EBIT",
+    "interest": "- Zinsen",
+    "ebt": "= Gewinn vor Steuern (EBT)",
+    "ebt_short": "EBT",
+    "taxes": "- Steuern vom Einkommen & Ertrag",
+    "eat": "= Jahresüberschuss / Nachsteuerergebnis (EAT)",
+    "private_withdrawals": "- Privatentnahmen",
+    "retained_earnings": "= Verbleibendes Ergebnis / Thesaurierung",
+    "startup_costs_label": "Gründungskosten (einmalig)",
+    "add_subitem_title": "Unterpunkt hinzufügen",
+    "edit_subitem_title": "Unterpunkt bearbeiten",
+    "reset_year_title": "Werte für GJ {{year}} zurücksetzen",
+    "fiscal_year_tab": "Geschäftsjahr {{index}} - {{year}}",
+    "system_generated_subitem": "System-generierter Unterpunkt"
+  },
+  "finanzierungsplan": {
+    "title": "Finanzierungsplan",
+    "startup_costs": "Gründungsaufwand",
+    "equity": "Eigenkapital",
+    "debt": "Fremdkapital",
+    "source": "Quelle",
+    "amount": "Betrag (€)",
+    "interest": "Zins (%)",
+    "grace_period": "Tilgungsfr. Anlauf (Monate)",
+    "start_date": "Startdatum",
+    "end_date": "Enddatum",
+    "total_equity": "Gesamt Eigenkapital",
+    "total_debt": "Gesamt Fremdkapital",
+    "description": "Beschreibung",
+    "edit_source": "Quelle bearbeiten",
+    "add_source": "Neue Quelle hinzufügen",
+    "source_name": "Name der Quelle",
+    "source_description": "Beschreibung (für Tooltip)",
+    "source_description_placeholder": "Zusätzliche Details zur Finanzierungsquelle...",
+    "delete_source": "Quelle löschen",
+    "delete_source_confirm": "Möchten Sie den Finanzierungseintrag \"{{name}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "total_startup_costs": "Gesamter Gründungsaufwand",
+    "startup_costs_items": {
+      "inventory_material": "Waren und Material",
+      "rnd_others": "sonstiges (Angebotserstellung, Marktforschung)",
+      "consulting": "Steuer- / Rechtsberatung",
+      "marketing_travel": "Infomaterial / Reisen / Werbung",
+      "business_registration": "Gewerbeanmeldung",
+      "initial_capital": "Stammeinlage",
+      "broker_deposit": "Maklergebühren / Kaution",
+      "licenses_others": "Sonstiges (Lizenzen, Software, Beratung)"
+    }
+  },
+  "abschreibungsplan": {
+    "title": "Abschreibungsplan (Anlagevermögen)",
+    "afa_title": "Abschreibungen (AfA)",
+    "asset": "Investitionsgut",
+    "costs": "Kosten (€)",
+    "afa_category": "AfA-Kategorie",
+    "useful_life": "ND (Jahre)",
+    "purchase_date": "Kaufdatum",
+    "annual_afa": "Jährl. AfA (€)",
+    "add_asset": "Investition hinzufügen",
+    "total_investment": "Gesamtinvestition"
+  },
+  "produktkalkulation": {
+    "title": "Produkt- & Preiskalkulation",
+    "categories_title": "Produktkategorien erstellen, filtern & verwalten",
+    "filter_all": "Alle Produkte anzeigen",
+    "filter_none": "Unkategorisiert",
+    "filter_apply": "Filter anwenden",
+    "category_edit": "Ausgewählte Kategorie bearbeiten",
+    "category_add": "Neue Kategorie hinzufügen",
+    "category_settings_title": "Einstellungen für Produktkategorie",
+    "category_select": "Kategorie auswählen...",
+    "category_settings_hint": "Die hier vorgenommenen Einstellungen gelten für alle Produkte in der ausgewählten Kategorie und überschreiben individuelle Produktangaben.",
+    "revenue_calc_title": "Umsatzkalkulation",
+    "add_unit": "Neue Umsatzeinheit hinzufügen",
+    "no_unit_selected": "Keine Umsatzeinheit zum Anzeigen ausgewählt. Bitte wählen Sie eine aus der Liste oder fügen Sie eine neue hinzu.",
+    "cat_filter_none_description": "Produkte ohne zugewiesene Kategorie.",
+    "cat_filter_all_description": "Alle Produkte werden angezeigt."
+  },
+  "produktkalkulation_details": {
+    "material_costs": "Materialkosten (Software, Material/Wareneinkauf)",
+    "production_costs": "Fertigungskosten (Personal, Maschinen)",
+    "admin_costs": "Verwaltungskosten (Lagerung/Logistik/Büro)",
+    "marketing_sales_costs": "Marketing & Vertriebskosten",
+    "margin": "Marge (Rücklagen/Ausschuß)",
+    "other_costs": "Sonstiges",
+    "description": "Beschreibung",
+    "unit": "Einheit",
+    "value": "Wert",
+    "sales_price_net": "Verkaufspreis (netto)",
+    "vat": "Umsatzsteuer",
+    "sales_price_gross": "Verkaufspreis (brutto)",
+    "variable_costs_header": "Variable Kosten",
+    "total_variable_costs": "Variable Kosten gesamt",
+    "gross_profit": "Rohgewinn",
+    "cogs_percent": "Wareneinsatz (%)",
+    "cogs_hint": "Setzt die variablen Kosten prozentual zum Nettopreis. Deaktiviert, wenn Kosten manuell eingetragen sind oder von der Kategorie gesteuert werden.",
+    "revenue_delay_header": "Einnahmenverzögerung & Vorbehalt",
+    "revenue_delay_weeks": "Einnahmenverzögerung (Wochen)",
+    "revenue_delay_hint": "Um wie viele Wochen verzögert sich der Zahlungseingang?",
+    "reserve_percent": "Vorbehalt (%)",
+    "reserve_hint": "Prozentsatz der Einnahme, der zurückgehalten wird (z.B. für Garantien).",
+    "reserve_delay_weeks": "Einnahmeverzögerung Vorbehalt (Wochen)",
+    "reserve_delay_hint": "Zusätzliche Verzögerung for den zurückgehaltenen Betrag.",
+    "desc_assignment_title": "Beschreibung & Zuordnung",
+    "desc_placeholder": "Fügen Sie eine Beschreibung für diese Umsatzeinheit hinzu...",
+    "category_label": "Kategorie",
+    "cogs_category_controlled": "Wird von Kategorie gesteuert",
+    "cogs_auto_calc": "Wird automatisch berechnet, da Kosten manuell eingetragen sind.",
+    "cogs_manual_hint": "Wareneinsatz in Prozent. Ändert den Posten 'Sonstiges'."
+  },
+  "data_management": {
+    "title": "Daten-Management",
+    "restore_title": "Speicherpunkte wiederherstellen",
+    "restore_hint": "Stellen Sie einen der letzten 5 Speicherstände wieder her. Achtung: Nicht gespeicherte Änderungen gehen verloren.",
+    "restore_point_project": "Projekt:",
+    "restore_point_unknown": "Unbekannt",
+    "restore_stand_tooltip": "Diesen Speicherstand wiederherstellen",
+    "no_restore_points": "Es sind noch keine Speicherpunkte vorhanden.",
+    "manage_chats_title": "Gespeicherte Chats verwalten",
+    "manage_chats_hint": "Löschen, exportieren oder importieren Sie hier Ihre Chatverläufe für das aktuelle Projekt.",
+    "chat_saved_at": "Gespeichert am",
+    "export_chat_tooltip": "Diesen Chat exportieren",
+    "delete_chat_tooltip": "Diesen Chat löschen",
+    "no_saved_chats": "Keine Chats für dieses Projekt gespeichert.",
+    "import_chats_tooltip": "Chats importieren",
+    "export_all_chats_tooltip": "Alle Chats exportieren",
+    "delete_all_chats_tooltip": "Alle Chats löschen",
+    "export_import_title": "Projektdaten exportieren/importieren",
+    "export_import_hint": "Sichern Sie Ihre Projekte als JSON-Dateien oder laden Sie eine zuvor exportierte Projektdatei.",
+    "export_all_projects_tooltip": "Alle Projekte exportieren",
+    "export_current_project_tooltip": "Aktuelles Projekt exportieren",
+    "import_project_tooltip": "Projektdatei importieren",
+    "local_kb_title": "Lokale Wissensdatenbank (RAG)",
+    "local_kb_hint": "Verwalten Sie Dokumente, die dem AI-Assistenten als Hintergrundwissen zur Verfügung stehen. Alle Daten verbleiben lokal."
+  },
+  "uebersicht": {
+    "title": "Gesamtübersicht Geschäftsjahre 1 bis {{years}}",
+    "total_revenue": "Gesamtumsatz",
+    "total_profit_bt": "Gesamtgewinn v.St.",
+    "payback_period": "Amortisationszeit",
+    "avg_ros": "Durchschn. Umsatzrendite",
+    "final_roi": "Gesamt-ROI",
+    "cash_flow_details": "Nebenrechnungen (Cash-Flow Details)",
+    "income_statement_overview": "Ertragsübersicht",
+    "annual_overviews": "Jahresübersichten",
+    "profit_calculation_title": "Ergebnisrechnung",
+    "bruttogewinn": "Bruttogewinn",
+    "operational_costs": "Betriebskosten",
+    "depreciation": "Abschreibungen",
+    "interest": "Zinsaufwand",
+    "private_withdrawals": "Privatentnahmen",
+    "monthly_kpi_trend": "Monatlicher Kennzahlenverlauf",
+    "kpi_overview": "Kennzahlen im Überblick",
+    "revenue_short": "Umsatzerlöse",
+    "profit_bt_short": "Gewinn v.St.",
+    "net_cash_flow": "Net Cash-Flow",
+    "ros": "Return on Sales (Umsatzrendite)",
+    "roi": "Return on Investment (ROI p.a.)",
+    "break_even": "Break-Even-Umsatz",
+    "kpi": "Kennzahl",
+    "value": "Wert",
+    "cash_flow_before_taxes": "Cash-Flow (vor Steuern)",
+    "debt_repayment": "Tilgung Fremdkapital",
+    "capital_service": "Kapitaldienstleistungen (Tilgung + Zinsen)",
+    "revenue": "Umsatz",
+    "cogs": "Wareneinsatz",
+    "gross_profit": "Rohertrag",
+    "sum_expenses": "Summe der Aufwendungen",
+    "profit_loss": "Gewinn/Verlust"
+  },
+  "debug": {
+    "title": "Debug Panel",
+    "temp_key_label": "Temp API Key",
+    "temp_key_placeholder": "Temporären Key eingeben...",
+    "set_reload": "Setzen & Neu laden",
+    "remove": "Entfernen",
+    "active_prefix": "Aktiv: ...",
+    "set_alert": "Temporärer API-Schlüssel gesetzt. Die Seite wird neu geladen, um ihn zu übernehmen.",
+    "clear_alert": "Temporärer API-Schlüssel entfernt. Die Seite wird neu geladen."
+  },
+  "print": {
+    "header": {
+      "title": "Finanzplan für: {{projectName}}",
+      "created_at": "Erstellt am: {{date}}"
+    },
+    "stammdaten": {
+      "title": "Übersicht und Stammdaten",
+      "project_name": "Projektname",
+      "company_name": "Name des Unternehmens",
+      "legal_form": "Rechtsform",
+      "foundation_date": "Gründungsdatum",
+      "planning_years": "Planungsjahre"
+    },
+    "table": {
+      "description": "Beschreibung",
+      "category": "Kategorie",
+      "total": "Gesamt",
+      "monthly_sum": "Monatssumme",
+      "value": "Wert"
+    },
+    "overview": {
+      "title": "Übersicht {{yearValue}} - Jahr {{yearNumber}}"
+    },
+    "years": {
+      "title": "{{title}} - Geschäftsjahr {{yearNumber}} ({{yearValue}})"
+    },
+    "finanzierung": {
+      "title": "Finanzierungsplan",
+      "equity": "Eigenkapital",
+      "debt": "Fremdkapital",
+      "source": "Quelle",
+      "source_name_required": "Bitte geben Sie einen Namen für die Quelle an.",
+      "amount_eur": "Betrag (€)",
+      "interest_percent": "Zins (%)",
+      "grace_months": "Anlauf (Monate)",
+      "start": "Start",
+      "end": "Ende"
+    },
+    "umsatzkalkulation": {
+      "title": "Umsatzkalkulation",
+      "product_title": "Produkt: {{name}}",
+      "price_net": "Verkaufspreis (netto)",
+      "vat_percent": "Umsatzsteuer (%)",
+      "price_gross": "Verkaufspreis (brutto)",
+      "total_var_costs": "Variable Kosten gesamt",
+      "gross_margin": "Rohgewinn"
+    },
+    "absatzplan": {
+      "title": "Absatzplan (Menge)"
+    },
+    "abschreibungsplan": {
+      "title": "Abschreibungsplan (AfA)",
+      "asset": "Investitionsgut",
+      "amount_eur": "Kosten (€)",
+      "afa_category": "AfA-Kategorie",
+      "useful_life": "ND (Jahre)",
+      "purchase_date": "Kaufdatum",
+      "annual_afa": "Jährl. AfA (€)"
+    },
+    "guv": {
+      "title": "Ertragsplan (GuV)",
+      "position": "Position",
+      "revenue": "Umsatzerlöse",
+      "material_costs": "Material-/Wareneinsatz",
+      "gross_profit": "Rohertrag",
+      "operating_expenses": "Betriebliche Aufwendungen",
+      "depreciation": "Abschreibungen",
+      "sum_operating_expenses": "Summe betr. Aufwendungen",
+      "ebit": "Betriebsergebnis (EBIT)",
+      "interest": "Zinsen",
+      "ebt": "Gewinn vor Steuern (EBT)",
+      "tax": "Steuern vom Einkommen & Ertrag",
+      "eat": "Jahresüberschuss (EAT)",
+      "private_withdrawal": "Privatentnahme",
+      "net_cash_flow": "Netto-Cashflow",
+      "remaining": "Verbleibendes Ergebnis / Thesaurierung"
+    },
+    "liquiditaet": {
+      "title": "Liquiditätsplan",
+      "inflows": "Laufende Einzahlungen",
+      "revenue_net": "Umsatz (netto)",
+      "vat_collected": "Umsatzsteuer / Zahllast",
+      "sum_inflows": "Summe laufende Einz.",
+      "outflows": "Laufende Auszahlungen",
+      "var_costs": "Bezogene L. u. W.",
+      "interest_payments": "Zinszahlungen",
+      "vat_paid": "Vorsteuer (aus Einkäufen)",
+      "vat_payments": "Umsatzsteuer-Zahlungen",
+      "sum_outflows": "Summe laufende Ausz.",
+      "investment_financing": "Investitions- & Finanzierungstätigkeit",
+      "equity_inflow": "Einzahlungen Eigenmittel",
+      "debt_inflow": "Einzahlungen Fremdmittel (Darlehen)",
+      "investments": "Investitionen",
+      "investment_outflow": "Auszahlungen für Investitionen",
+      "repayments": "Tilgung (von Darlehen)",
+      "private_withdrawal": "Privatentnahme",
+      "net_cash_flow": "Netto-Cashflow",
+      "liquidity_balance": "Saldo lfd. Liquidität",
+      "accumulated_liquidity": "Kumulierte Liquidität"
+    },
+    "annual_overviews": {
+      "title": "Jahresübersichten",
+      "year_title": "Geschäftsjahr {{yearNumber}} - {{yearValue}}"
+    }
+  },
+  "scenarios": {
+    "title": "Szenarien vergleichen",
+    "manage": "Szenarien verwalten",
+    "select_scenario": "Szenario auswählen...",
+    "edit_scenario": "Ausgewähltes Szenario bearbeiten",
+    "create_scenario": "Neues Szenario erstellen",
+    "select_comparison": "Szenarien zum Vergleich auswählen (max. 3):",
+    "current_project": "Aktuelles Projekt",
+    "select_kpi": "Anzuzeigende Kennzahl:",
+    "annual_comparison": "Jährlicher Vergleich: {{kpi}}",
+    "fiscal_year": "Geschäftsjahr",
+    "comparison_title": "Vergleich: {{kpi}}",
+    "empty_selection": "Wählen Sie oben Szenarien aus, um einen Vergleich anzuzeigen.",
+    "year_index": "Jahr {{index}}",
+    "modal": {
+      "title_new": "Neues Szenario erstellen",
+      "title_edit": "Szenario bearbeiten",
+      "name_label": "Szenario-Name (max. 20 Zeichen)",
+      "description_label": "Beschreibung (optional)",
+      "description_placeholder": "z.B. Optimistischer Fall mit 15% mehr Absatz...",
+      "adjustments": "Anpassungen",
+      "adjustments_empty": "Fügen Sie eine oder mehrere Anpassungen hinzu, um dieses Szenario zu definieren.",
+      "type": "Typ",
+      "target": "Ziel",
+      "change": "Änderung",
+      "period": "Zeitraum",
+      "from_fy": "Von GJ",
+      "to_fy": "bis GJ",
+      "add_adjustment": "Anpassung hinzufügen"
+    },
+    "delete": {
+      "title": "Szenario löschen",
+      "confirm": "Möchten Sie das Szenario \"{{name}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+    },
+    "validation": {
+      "name_required": "Bitte geben Sie einen Namen für das Szenario ein.",
+      "name_too_long": "Der Szenario-Name darf maximal 20 Zeichen lang sein."
+    },
+    "targets": {
+      "salesForecast": "Umsatz",
+      "operationalCosts": "Betriebskosten",
+      "all_products": "Alle Produkte",
+      "all_costs": "Alle Kosten"
+    }
+  },
+  "product_calc": {
+    "new_category": "Neue Kategorie erstellen",
+    "edit_category": "Kategorie bearbeiten",
+    "category_name_required": "Bitte geben Sie einen Namen für die Kategorie ein.",
+    "category_desc_label": "Beschreibung (für Tooltip)",
+    "category_desc_placeholder": "Zusätzliche Details zur Kategorie...",
+    "category_settings_title": "Einstellungen für \"{{name}}\"",
+    "cogs_label": "Allgemeiner Wareneinsatz (%)",
+    "cogs_hint": "Leer lassen, um individuelle Produktwerte zu verwenden.",
+    "revenue_delay_label": "Allgemeine Einnahmenverzögerung (Wochen)",
+    "reserve_label": "Allgemeiner Vorbehalt (%)",
+    "reserve_delay_label": "Allgemeine Einnahmeverzögerung Vorbehalt (Wochen)",
+    "delete_unit_title": "Umsatzeinheit löschen",
+    "delete_unit_confirm": "Möchten Sie \"{{name}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden und entfernt auch die zugehörigen Daten aus dem Absatzplan.",
+    "delete_category_title": "Kategorie löschen",
+    "delete_category_confirm": "Möchten Sie die Kategorie \"{{name}}\" wirklich löschen? Zugeordnete Produkte verlieren ihre Kategorisierung.",
+    "apply_settings_title": "Einstellungen übernehmen",
+    "apply_settings_confirm": "Möchten Sie die neuen Einstellungen für die Kategorie \"{{name}}\" wirklich speichern? Dies überschreibt die entsprechenden Werte bei allen zugeordneten Produkten."
+  }
+}
