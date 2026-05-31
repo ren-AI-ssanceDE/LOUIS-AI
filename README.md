@@ -9,6 +9,8 @@
 [![Vite](https://img.shields.io/badge/Vite-6.x-purple.svg)](https://vite.dev/)
 [![React](https://img.shields.io/badge/React-18.x-blue.svg)](https://react.dev/)
 
+(Video show the old SaaS version - free version has improved functions)
+
 https://github.com/user-attachments/assets/9c16dfcc-f9a0-4ab2-960c-05751dbfd479
 
 ---
